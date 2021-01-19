@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<div class="workspace-wrapper" [ngClass]="{'collapsed': sidemenuCollapsed}">
+  <app-sidemenu></app-sidemenu>
+
+  <ngx-simplebar class="container-fluid workspace">
+  <!-- Custom scrollbar -->
+  <router-outlet></router-outlet>
+  <!--workspace area-->
+  </ngx-simplebar>
+
+</div>

@@ -1,0 +1,17 @@
+<div class="sidemenu-company">
+  <span class="sidemenu-collapse">{{portal.displayName}}</span>
+  <button class="sidemenu-toggle fas fa-bars" (click)="toggleSidemenu()"
+    [ngbTooltip]="getTooltip({text: 'Expand menu'})"></button>
+</div>
+<ngx-simplebar class='sidemenu-scroll'>
+  <ol class="sidemenu-nav">
+    <li class="sidemenu-item translate-up" [ngClass]="{'divider': item.isDivider}"
+      *ngFor="let item of menuItems; let i = index;" [style.animation-delay.s]="i * 0.025">
+      <a [routerLink]="item.routeTo" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: (item.routeTo == '/') }" *ngIf="!item.isDivider"
+        [ngbTooltip]="getTooltip(item)" placement="right" container="body"><i class="mr-2 {{item.icon}} fa-fw"></i><span
+          class="sidemenu-collapse">{{item.text}}</span></a>
+    </li>
+  </ol>
+</ngx-simplebar>
+

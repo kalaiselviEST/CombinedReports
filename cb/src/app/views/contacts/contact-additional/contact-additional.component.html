@@ -1,0 +1,64 @@
+<section class="contact-basic-info dot-loader-overlay mt-2 card bg-ligh" [ngClass]="{'border-0':isLoading}">
+    <div class="card-body p-2">
+
+        <div class="d-flex">
+            <strong>
+        <a class="cursor-pointer" (click)="isCollapsed = !isCollapsed; isRotate = !isRotate">
+          <i [@smoothRotate]="isRotate?'initial':'final'" class="fas fa-angle-down text-muted mr-1"></i>
+          Additional Contacts</a></strong>
+            <div class="custom-control custom-switch ml-auto mr-2">
+                <input type="checkbox" class="custom-control-input" id="additionalInactive" (change)="dummyCommActiveToggle()" [(ngModel)]="additionalShowInactive">
+                <label class="custom-control-label" for="additionalInactive">Show Inactive</label>
+            </div>
+        </div>
+        <fieldset [disabled]="!editable" [@smoothCollapse]="isCollapsed?'initial':'final'">
+            <ngx-simplebar class="table-overflow table-overflow-sm">
+                <table class="table table-sm table-xs table-field-exclusive bg-white table-striped">
+                    <thead class="header-nowrap">
+                        <tr>
+                            <td style="width:30px">&nbsp;</td>
+                            <td>Name</td>
+                            <td>Phone</td>
+                            <td>Email</td>
+                            <td>Relation</td>
+                        </tr>
+                    </thead>
+                    <tbody class="table-no-padding">
+                        <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" [id]="'chkAdditional_' + number" [checked]="i < 3">
+                                    <label class="custom-control-label" [for]="'chkAdditional_' + number"></label>
+                                </div>
+                            </td>
+                            <td><input class="form-control form-control-xs" value="Mary Beth" /></td>
+                            <td><input class="form-control form-control-xs" value="234-234-1222" /></td>
+                            <td><input class="form-control form-control-xs" value="marybethharper@email.com" /></td>
+
+                            <td><select class="form-control form-control-xs">
+                  <option>Spouse</option>
+                  <option>Employee</option>
+                  <option>Daughter</option>
+                  <option>Son</option>
+                  <option>Neighbour</option>
+                  <option>Friend</option>
+                  <option>Partner</option>
+                  <option>Mother</option>
+                  <option>Father</option>
+                  <option>Sister</option>
+                  <option>Brother</option>
+                  <option>Manager</option>
+                  <option>Landlord</option>
+                  <option>Renter</option>
+                </select></td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </ngx-simplebar>
+        </fieldset>
+
+    </div>
+    <dot-loader loadingText="Fetching contacts" [ngClass]="{'dot-loader-show':isLoading}" [overlay]="true"></dot-loader>
+</section>

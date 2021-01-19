@@ -1,0 +1,6 @@
+.contact-overflow{
+  max-height: calc(100vh - 95px);
+  overflow-x:hidden;
+  overflow-y:auto;
+  padding-right:10px;
+}

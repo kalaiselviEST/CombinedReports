@@ -1,0 +1,55 @@
+<ng-container *ngFor="let group of filtered; let i = index;">
+
+  <div class="table-row position-relative">
+    <div class="table-cell">
+      <div class="custom-control custom-checkbox" *ngIf="!group.isLoading">
+        <input type="checkbox" class="custom-control-input" [id]="'chk_' + group.id" [checked]="group.isActive"
+          (change)="toggleActive(group)">
+        <label class="custom-control-label" [for]="'chk_' + group.id"></label>
+      </div>
+      <span class="" *ngIf="group.isLoading">
+        <i class="fas fa-spinner fa-spin ml-1"></i>
+      </span>
+    </div>
+    <div class="table-cell">
+      <a class="table-link" [routerLink]="'edit/' + group.id"
+        [innerHTML]="(isSearch?group.fullName: group.name) | highlight:searchKey"></a></div>
+    <div class="table-cell" [innerHTML]="group.description | highlight:searchKey"></div>
+    <div class="table-cell">{{group.fundName}}</div>
+    <div class="table-cell">{{group.departmentName}}</div>
+    <div class="table-cell">{{group.expenseAccountName}}</div>
+    <div class="table-cell">{{group.liabilityAccountName}}</div>
+    <div class="table-cell">{{group.limit}}</div>
+    <div class="table-cell text-center">
+      <i class="fas fa-minus text-muted" *ngIf="!group.taxable"></i>
+      <i class="fas fa-check text-success" *ngIf="group.taxable"></i>
+    </div>
+    <!-- <div class="table-cell">{{group.rate}}</div> -->
+    <div class="table-cell">
+      <button class="btn btn-xs btn-outline-info" (click)="ratesTable(group.id)">Table</button>
+    </div>
+    <div class="table-cell">{{group.itemTypeName}}</div>
+    <div class="table-cell text-center no-truncate">
+      <span class="table-action" *ngIf="!group.isDeleting">
+        <button class="btn btn-xs" (click)="deleteConfirm(group)"><i class="fas fa-trash text-danger"></i></button>
+      </span>
+      <span class="table-confirm-action" *ngIf="group.isDeleting">
+        <span class="confirm-text">Are you sure to delete?</span>
+        <button class="btn btn-xs mr-1" (click)="group.isDeleting = false"><i
+            class="fas fa-times text-success"></i></button>
+        <button class="btn btn-xs" (click)="deleteGroup(group, i)"><i class="fas fa-check text-danger"></i></button>
+      </span>
+    </div>
+  </div>
+  <coa-groups-row [parentID]="group.id" *ngIf="group.hasChildren && !isSearch" class="table-row-component"></coa-groups-row>
+
+</ng-container>
+
+
+<div class="table-no-data" *ngIf="isSearch && filtered.length == 0">
+  <i class="fas fa-search fa-3x mb-4 text-info icon-no-results"></i>
+  <p>
+    No Records Found for "{{searchKey}}"<br />
+    Try a different keyword
+  </p>
+</div>

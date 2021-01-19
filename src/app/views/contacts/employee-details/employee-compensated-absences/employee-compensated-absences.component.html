@@ -1,0 +1,71 @@
+<section class="dot-loader-overlay mt-3" [ngClass]="{'border-0':isLoading}">
+    <fieldset [disabled]="!editable">
+        <ngx-simplebar class="table-overflow table-overflow-sm table-comm mb-3">
+            <table class="table table-sm table-xs table-field-exclusive bg-white table-striped" data-column-center=".1.">
+                <thead class="header-nowrap header-align-middle">
+                    <tr>
+                        <td style="width:30px;"></td>
+                        <td style="width:70px;">Type</td>
+                        <td style="width:100px;">Item</td>
+                        <td>Fund</td>
+                        <td style="width:90px;" class="wrap">Hours Available as of Today</td>
+                        <td style="width:70px;" class="wrap">Hours Used This Year</td>
+                        <td style="width:90px;" class="wrap">Begin Accruing Time On</td>
+                        <td style="width:70px;" class="wrap">Year Begins On Month</td>
+                        <td style="width:70px;" class="wrap">Year Begins On Day</td>
+                        <td style="width:65px;" class="wrap">Hours Accured per Period</td>
+                        <td style="width:120px;">Accrual Period</td>
+                        <td style="width:60px;" class="wrap">Max Hours to Accrue</td>
+                        <td style="width:60px;" class="wrap">Max Hours to Carry Over</td>
+                    </tr>
+                </thead>
+                <tbody class="table-no-padding">
+                    <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="directDeposit" checked>
+                                <label class="custom-control-label" for="directDeposit"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Sick Time" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Roads Sick" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Roads" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="0.00" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="40.00" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="12-31-18" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="July" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="1" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="40.00" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Annually" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ngx-simplebar>
+    </fieldset>
+</section>

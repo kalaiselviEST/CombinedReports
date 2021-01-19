@@ -1,0 +1,43 @@
+<section class="contact-basic-info dot-loader-overlay mt-2 card shadow-sm bg-ligh">
+    <div class="card-body p-2">
+
+        <div class="d-flex mb-2 align-items-center">
+            <strong>
+                <a class="cursor-pointer" (click)="isCollapsed = !isCollapsed; isRotate = !isRotate">
+                    <i [@smoothRotate]="isRotate?'initial':'final'" class="fas fa-angle-down text-muted mr-1"></i>Customer History
+                </a></strong>
+            <span class="badge badge-default ml-3 border-right bg-light-light">$ &nbsp;34,920.00</span>
+        </div>
+
+        <div [@smoothCollapse]="isCollapsed?'initial':'final'">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.utilityBilling}" (click)="selectTab('utilityBilling')">Utility Billing <span class="ml-4 text-muted">$
+            &nbsp;23,643.00</span></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.propertyTax}" (click)="selectTab('propertyTax')">Property Tax<span class="ml-4 text-muted">$ &nbsp;3,000.00</span></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.court}" (click)="selectTab('court')">Court <span
+            class="ml-4 text-muted">$
+            &nbsp;2,231.00</span></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.other}" (click)="selectTab('other')">Other <span
+            class="ml-4 text-muted">$
+            &nbsp;5,543.00</span></button>
+                </li>
+            </ul>
+
+
+            <history-utility-billing [changeObs]="utilityObs" *ngIf="activeTab.utilityBilling">
+            </history-utility-billing>
+
+            <history-property-tax [changeObs]="propertyObs" *ngIf="activeTab.propertyTax">
+            </history-property-tax>
+        </div>
+
+    </div>
+
+</section>

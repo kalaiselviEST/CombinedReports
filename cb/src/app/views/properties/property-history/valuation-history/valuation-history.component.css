@@ -1,0 +1,7 @@
+.table-overflow{
+    height: calc(100vh - 210px);
+  }
+
+  .text-warning{
+    color: #f5820a !important;
+  }

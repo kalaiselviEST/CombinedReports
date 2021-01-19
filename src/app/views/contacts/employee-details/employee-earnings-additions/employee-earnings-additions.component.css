@@ -1,0 +1,23 @@
+.table-comm {
+    max-height: 150px;
+}
+
+.font-weight-semibold {
+    font-weight: 600;
+}
+
+.w-50x {
+    width: 50px;
+}
+
+.custom-control-label::before,
+.custom-control-label::after {
+    width: 0.9em;
+    height: 0.9em;
+    left: -1.5em;
+    top: .35em;
+}
+
+p {
+    font-size: 0.8rem;
+}

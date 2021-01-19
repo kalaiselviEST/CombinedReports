@@ -1,0 +1,228 @@
+
+/*V-Align*/
+.v-bl {
+  vertical-align: baseline;
+}
+
+.v-md {
+  vertical-align: middle !important;
+}
+
+.v-top {
+  vertical-align: top !important;
+}
+
+table.v-md td, table.v-md th {
+  vertical-align: middle !important;
+}
+
+.text-center td, .text-center th {
+  text-align: center;
+}
+
+.text-ellipsis {
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow-x:hidden;
+}
+
+.strong{
+  font-weight:bold !important;
+}
+
+
+.paper-shadow {
+  box-shadow: -5px -5px 20px 0px rgba(0,0,0,0.2);
+}
+
+.shadow-inset-sm {
+-webkit-box-shadow:inset 0 0rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+        box-shadow:inset 0 0rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.shadow-inset {
+-webkit-box-shadow:inset 0 0rem 1rem rgba(0, 0, 0, 0.15) !important;
+        box-shadow:inset 0 0rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-inset-lg {
+-webkit-box-shadow:inset 0 0rem 3rem rgba(0, 0, 0, 0.175) !important;
+        box-shadow:inset 0 0rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+
+.overflow-x-visible {
+  overflow-x: visible !important;
+}
+
+.white-space-nowrap {
+  white-space: nowrap !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.table-fixed{
+table-layout:fixed;
+}
+
+
+thead.position-sticky tr th {
+  position: sticky;
+  z-index: 10;
+}
+
+
+thead.top-0 tr th {
+  top: 0px;
+}
+
+thead.top-5 tr th {
+  top: 5px;
+}
+
+thead.top-10 tr th {
+  top: 10px;
+}
+
+thead.top-15 tr th {
+  top: 15px;
+}
+
+[data-column-right*=".1."] tr td:nth-child(1),
+[data-column-right*=".2."] tr td:nth-child(2),
+[data-column-right*=".3."] tr td:nth-child(3),
+[data-column-right*=".4."] tr td:nth-child(4),
+[data-column-right*=".5."] tr td:nth-child(5),
+[data-column-right*=".6."] tr td:nth-child(6),
+[data-column-right*=".7."] tr td:nth-child(7),
+[data-column-right*=".8."] tr td:nth-child(8),
+[data-column-right*=".9."] tr td:nth-child(9),
+[data-column-right*=".10."] tr td:nth-child(10),
+[data-column-right*=".11."] tr td:nth-child(11),
+[data-column-right*=".12."] tr td:nth-child(12),
+[data-column-right*=".13."] tr td:nth-child(13),
+[data-column-right*=".14."] tr td:nth-child(14),
+[data-column-right*=".15."] tr td:nth-child(15),
+[data-column-right*=".16."] tr td:nth-child(16),
+[data-column-right*=".17."] tr td:nth-child(17),
+[data-column-right*=".18."] tr td:nth-child(18),
+[data-column-right*=".19."] tr td:nth-child(19),
+[data-column-right*=".20."] tr td:nth-child(20),
+[data-column-right*=".1."] tr td:nth-child(1) .form-control,
+[data-column-right*=".2."] tr td:nth-child(2) .form-control,
+[data-column-right*=".3."] tr td:nth-child(3) .form-control,
+[data-column-right*=".4."] tr td:nth-child(4) .form-control,
+[data-column-right*=".5."] tr td:nth-child(5) .form-control,
+[data-column-right*=".6."] tr td:nth-child(6) .form-control,
+[data-column-right*=".7."] tr td:nth-child(7) .form-control,
+[data-column-right*=".8."] tr td:nth-child(8) .form-control,
+[data-column-right*=".9."] tr td:nth-child(9) .form-control,
+[data-column-right*=".10."] tr td:nth-child(10) .form-control,
+[data-column-right*=".11."] tr td:nth-child(11) .form-control,
+[data-column-right*=".12."] tr td:nth-child(12) .form-control,
+[data-column-right*=".13."] tr td:nth-child(13) .form-control,
+[data-column-right*=".14."] tr td:nth-child(14) .form-control,
+[data-column-right*=".15."] tr td:nth-child(15) .form-control,
+[data-column-right*=".16."] tr td:nth-child(16) .form-control,
+[data-column-right*=".17."] tr td:nth-child(17) .form-control,
+[data-column-right*=".18."] tr td:nth-child(18) .form-control,
+[data-column-right*=".19."] tr td:nth-child(19) .form-control,
+[data-column-right*=".20."] tr td:nth-child(20) .form-control{
+ text-align:right;
+}
+
+[data-column-center*=".1."] tr td:nth-child(1),
+[data-column-center*=".2."] tr td:nth-child(2),
+[data-column-center*=".3."] tr td:nth-child(3),
+[data-column-center*=".4."] tr td:nth-child(4),
+[data-column-center*=".5."] tr td:nth-child(5),
+[data-column-center*=".6."] tr td:nth-child(6),
+[data-column-center*=".7."] tr td:nth-child(7),
+[data-column-center*=".8."] tr td:nth-child(8),
+[data-column-center*=".9."] tr td:nth-child(9),
+[data-column-center*=".10."] tr td:nth-child(10),
+[data-column-center*=".11."] tr td:nth-child(11),
+[data-column-center*=".12."] tr td:nth-child(12),
+[data-column-center*=".13."] tr td:nth-child(13),
+[data-column-center*=".14."] tr td:nth-child(14),
+[data-column-center*=".15."] tr td:nth-child(15),
+[data-column-center*=".16."] tr td:nth-child(16),
+[data-column-center*=".17."] tr td:nth-child(17),
+[data-column-center*=".18."] tr td:nth-child(18),
+[data-column-center*=".19"] tr td:nth-child(19),
+[data-column-center*=".20."] tr td:nth-child(20),
+[data-column-center*=".1."] tr td:nth-child(1) .form-control,
+[data-column-center*=".2."] tr td:nth-child(2) .form-control,
+[data-column-center*=".3."] tr td:nth-child(3) .form-control,
+[data-column-center*=".4."] tr td:nth-child(4) .form-control,
+[data-column-center*=".5."] tr td:nth-child(5) .form-control,
+[data-column-center*=".6."] tr td:nth-child(6) .form-control,
+[data-column-center*=".7."] tr td:nth-child(7) .form-control,
+[data-column-center*=".8."] tr td:nth-child(8) .form-control,
+[data-column-center*=".9."] tr td:nth-child(9) .form-control,
+[data-column-center*=".10."] tr td:nth-child(10) .form-control,
+[data-column-center*=".11."] tr td:nth-child(11) .form-control,
+[data-column-center*=".12."] tr td:nth-child(12) .form-control,
+[data-column-center*=".13."] tr td:nth-child(13) .form-control,
+[data-column-center*=".14."] tr td:nth-child(14) .form-control,
+[data-column-center*=".15."] tr td:nth-child(15) .form-control,
+[data-column-center*=".16."] tr td:nth-child(16) .form-control,
+[data-column-center*=".17."] tr td:nth-child(17) .form-control,
+[data-column-center*=".18."] tr td:nth-child(18) .form-control,
+[data-column-center*=".19."] tr td:nth-child(19) .form-control,
+[data-column-center*=".20."] tr td:nth-child(20) .form-control{
+ text-align:center;
+}
+
+.small{
+  font-size:90% !important;
+}
+
+.text-wrap{
+  white-space: normal !important;
+}
+
+.hover-shadow {
+  cursor: pointer;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  z-index: 1;
+}
+
+.table-overflow table .sticky-left{
+  left:0;
+  position:sticky;
+  z-index:2;
+}
+
+.table-overflow table thead .sticky-left{
+  z-index:3;
+}
+
+.table-overflow table .sticky-right{
+  right:0;
+  position:sticky;
+  z-index:2;
+}
+
+.table-overflow table thead .sticky-right{
+  z-index:3;
+}
+
+.bg-light-light{
+  background-color:#e8e9ea;
+}
+
+.border-light-light{
+  border-color:#e8e9ea !important;
+}
+
+.form-control-ta {
+  font-size: .775rem !important;
+  padding: .15rem .25rem !important;
+}

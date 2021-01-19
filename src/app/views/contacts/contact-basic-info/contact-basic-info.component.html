@@ -1,0 +1,151 @@
+<section class="contact-basic-info dot-loader-overlay card bg-light" [ngClass]="{'border-0':isLoading}">
+  <div class="bg-light-light border-bottom">
+    <div class="card-body px-2 py-1">
+      <fieldset [disabled]="!editable">
+        <div class="d-flex">
+          <div class="custom-control custom-checkbox pr-3 mr-3 border-right border-light">
+            <input type="checkbox" class="custom-control-input" id="conTypeCustomer"
+              [(ngModel)]="contactTypes.isCustomer">
+            <label class="custom-control-label" for="conTypeCustomer">Contact is Customer</label>
+          </div>
+          <div class="custom-control custom-checkbox pr-3 mr-3 border-right border-light">
+            <input type="checkbox" class="custom-control-input" id="conTypeVendor" [(ngModel)]="contactTypes.isVendor">
+            <label class="custom-control-label" for="conTypeVendor">Contact is Vendor</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="conTypeEmployee"
+              [(ngModel)]="contactTypes.isEmployee">
+            <label class="custom-control-label" for="conTypeEmployee">Contact is Employee</label>
+          </div>
+
+          <div class="ml-auto mr-0" *ngIf="formIsProcessing">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span class="ml-1">Please wait...</span>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="card-body p-2">
+    <div class="row">
+      <div class="col-lg-4">
+        <form [formGroup]="basicForm" novalidate>
+
+
+          <fieldset [disabled]="!editable || formIsProcessing">
+            <table class="table-sm table-xs table-fields-cols-2 w-100">
+              <tbody>
+                <tr>
+                  <td><label class="mb-0">Title</label></td>
+                  <td><input class="form-control form-control-xs" [formControl]="title" /></td>
+                </tr>
+                <tr>
+                  <td><label class="mb-0">First Name</label></td>
+                  <td><input class="form-control form-control-xs" [formControl]="firstName" /></td>
+                </tr>
+                <tr>
+                  <td><label class="mb-0">MI</label></td>
+                  <td><input class="form-control form-control-xs" [formControl]="middleName" /></td>
+                </tr>
+                <tr>
+                  <td><label class="mb-0">Last Name</label></td>
+                  <td><input class="form-control form-control-xs" [formControl]="lastName" /></td>
+                </tr>
+                <tr>
+                  <td><label class="mb-0">Suffix</label></td>
+                  <td><input class="form-control form-control-xs" [formControl]="suffix" /></td>
+                </tr>
+                <tr>
+                  <td><label class="mb-0">D.B.A.</label></td>
+                  <td><input class="form-control form-control-xs" [formControl]="companyName" /></td>
+                </tr>
+                <tr>
+                  <td><label class="mb-0">Job Title</label></td>
+                  <td><input class="form-control form-control-xs" [formControl]="jobTitle" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="d-flex">
+          <strong>Communication Details</strong>
+          <div class="custom-control custom-switch ml-auto mr-2">
+            <input type="checkbox" class="custom-control-input" id="commMethodInactive"
+              (change)="dummyCommActiveToggle()" [(ngModel)]="commShowInactive">
+            <label class="custom-control-label" for="commMethodInactive">Show Inactive</label>
+          </div>
+        </div>
+        <fieldset [disabled]="!editable">
+          <ngx-simplebar class="table-overflow table-overflow-sm table-comm">
+            <table class="table table-sm table-xs table-field-exclusive bg-white table-striped">
+              <thead>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>Method</td>
+                  <td style="width:60%">Value</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" [id]="'chkComm_' + number" [checked]="i < 3">
+                      <label class="custom-control-label" [for]="'chkComm_' + number"></label>
+                    </div>
+                  </td>
+                  <td><input class="form-control form-control-xs" value="Email" /></td>
+                  <td><input class="form-control form-control-xs" value="dillion@harper.com" /></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </ngx-simplebar>
+        </fieldset>
+      </div>
+
+
+      <div class="col-lg-3">
+        <div class="d-flex">
+          <strong>Services</strong>
+        </div>
+        <fieldset [disabled]="!editable || formIsProcessing">
+          <ngx-simplebar class="table-overflow table-overflow-sm table-comm">
+            <table class="table table-sm table-xs bg-white table-striped">
+              <thead>
+                <tr>
+
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" [id]="'chkSer_all'">
+                      <label class="custom-control-label" [for]="'chkSer_all'"> Select All</label>
+                    </div>
+
+                   
+                  </td>
+                </tr>
+              </thead>
+              <tbody class="table-no-padding">
+                <tr *ngFor="let number of [1,2,3,4,5]; let i = index;" [style.animation-delay.s]="i * 0.025">
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" [id]="'chkSer_' + number" [checked]="i < 3">
+                      <label class="custom-control-label" [for]="'chkSer_' + number"> Service {{i}} </label>
+                    </div>
+                  </td>
+
+
+                </tr>
+
+              </tbody>
+            </table>
+          </ngx-simplebar>
+        </fieldset>
+      </div>
+
+    </div>
+  </div>
+  <dot-loader loadingText="Fetching basic info" [ngClass]="{'dot-loader-show':isLoading}" [overlay]="true"></dot-loader>
+</section>

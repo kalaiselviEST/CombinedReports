@@ -1,0 +1,25 @@
+<h1 class="page-title">Chart of Accounts</h1>
+
+<div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <button class="nav-link" [ngClass]="{'active':activeTab.funds}" (click)="selectTab('funds')">
+        Funds </button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" [ngClass]="{'active':activeTab.departments}" (click)="selectTab('departments')">
+        Departments</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" [ngClass]="{'active':activeTab.accounts}" (click)="selectTab('accounts')">
+        Accounts</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" [ngClass]="{'active':activeTab.groups}" (click)="selectTab('groups')">
+        Groups</button>
+    </li>
+  </ul>
+
+  <router-outlet></router-outlet>
+
+</div>

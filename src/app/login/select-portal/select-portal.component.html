@@ -1,0 +1,39 @@
+<div class="background">
+  <div class="portal-panel shadow-lg rounded">
+    <div class="row m-auto">
+      <div class="col-sm-5 text-center border-right px-0">
+        <div class="bg-light py-5">
+          <img src="/assets/images/logo-sm-h.png" alt="logo" height="120px">
+          <h2 class="mb-0">ClerkBooks
+            <small class="text-muted d-block mt-2">Municipal Accounting</small>
+          </h2>
+
+        </div>
+        <div class="py-5">
+          <h4 class="text-muted mb-4">Welcome, {{userClaims.given_name}}</h4>
+          <button class="btn btn-sm btn-outline-primary px-4 mt-3">Logout</button>
+        </div>
+      </div>
+      <div class="col-sm-7 py-4 px-4">
+        <div class="d-flex align-items-center">
+          <h5>Select a portal to continue</h5>
+          <span class="ml-auto" *ngIf="portalSelected">
+            <i class="fas fa-spinner fa-spin mr-1"></i>
+            Please wait...
+          </span>
+        </div>
+        
+        <div class="list-group py-2" *ngIf="!portalsLoading">
+          <button type="button" class="list-group-item list-group-item-action" *ngFor="let portal of portals"
+            (click)="loadPortal(portal)">
+            {{portal.displayName}}
+            <small class="d-block text-muted">{{portal.legalName}} | {{portal.city}}</small>
+          </button>
+        </div>
+        <div class="py-3" *ngIf="portalsLoading">
+          <i class="fas fa-spinner fa-spin mr-1"></i> Fetching Portal List...
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

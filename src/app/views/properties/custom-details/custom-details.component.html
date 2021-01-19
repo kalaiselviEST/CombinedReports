@@ -1,0 +1,23 @@
+<ngx-simplebar class="table-overflow gutter" [options]="{ autoHide: false }">
+<table class="table table-sm table-xs table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Detail Item</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="isListLoading">
+        <tr>
+            <td colspan="10" class="text-center py-5 bg-white">
+                <dot-loader loadingText="Fetching Contacts"></dot-loader>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="!isListLoading">
+        <tr class="translate-up" *ngFor="let number of sampleArr; let i = index;" [style.animation-delay.s]="i * 0.025">
+            <td>Property Type</td>
+            <td>Retail Store with Upstairs Apartment</td>
+        </tr>
+    </tbody>
+</table>
+</ngx-simplebar>

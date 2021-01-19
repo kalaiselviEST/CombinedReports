@@ -1,0 +1,86 @@
+<div class="d-flex my-2">
+  <h1 class="page-title mb-0">Groups</h1>
+  <button class="btn btn-xs btn-info mr-0 ml-auto px" [routerLink]="[newGroupUrl]"><i class="fas fa-plus mr-1"></i>New
+    Group</button>
+</div>
+
+<fieldset [disabled]="isListLoading" class="my-2">
+  <section class="filter-strip border">
+    <div class="search-control" [ngClass]="{'loading': searchLoading}">
+      <input type="search" class="form-control form-control-xs" placeholder="Type here to search"
+        [(ngModel)]="searchKey" (ngModelChange)="sendSearch()" />
+    </div>
+    <dropdown-select class="mr-2" buttonClass="btn-dropdown" menuClass="dropdown-menu-right" [dropdownItems]="groupTypes"
+      (itemChange)="selectGroupType($event)" dropdownLabel="Group Type: " *ngIf="groupTypes.length > 0">
+    </dropdown-select>
+    <div class="custom-control custom-switch mr-2">
+      <input type="checkbox" class="custom-control-input" id="filterStripInactive" [(ngModel)]="showInactive"
+        (change)="fetchGroups()">
+      <label class="custom-control-label" for="filterStripInactive">Show Inactive</label>
+    </div>
+    <button class="btn btn-xs mr-2" ngbTooltip="Clear all filters" placement="top">
+      <i class="fas fa-times text-danger"></i>
+    </button>
+  </section>
+</fieldset>
+
+<ngx-simplebar class="table-overflow">
+  <div class="table-mimic table-xs">
+    <div class="table-head">
+      <span class="column-header">
+        &nbsp;
+        <!-- Checkboxes -->
+      </span>
+      <span class="column-header">
+        Name
+      </span>
+      <span class="column-header">
+        Description
+      </span>
+      <span class="column-header">
+        Fund
+      </span>
+      <span class="column-header">
+        Department
+      </span>
+      <span class="column-header">
+        Account
+      </span>
+      <span class="column-header">
+        Liability Account
+      </span>
+      <span class="column-header">
+        Limit
+      </span>
+      <span class="column-header text-center">
+        Taxable
+      </span>
+      <!-- <span class="column-header">
+        Rate
+      </span> -->
+      <span class="column-header">
+        Rates
+        <!-- Rates -->
+      </span>
+      <span class="column-header">
+        Type
+      </span>
+      <span class="column-header">
+        &nbsp;
+        <!-- Action buttons -->
+      </span>
+    </div>
+    <div class="table-loader" *ngIf="isListLoading">
+      <dot-loader loadingText="Fetching Groups"></dot-loader>
+    </div>
+    <div class="table-no-data" *ngIf="!isListLoading && itemSvc.items.length == 0">
+      No Records Found
+    </div>
+
+    <div class="table-body" *ngIf="!isListLoading" #tbody>
+      <coa-groups-row class="table-row-component" [parentID]="null" [searchObs]="searchSbj.asObservable()"></coa-groups-row>
+    </div>
+  </div>
+</ngx-simplebar>
+<router-outlet></router-outlet>
+<rates-table></rates-table>

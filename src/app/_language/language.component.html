@@ -1,0 +1,12 @@
+<div class="dropdown language-switch">
+  <button class="btn btn-lang btn-sm" data-toggle="dropdown">
+    <i class="fas fa-globe mr-1"></i>
+    {{selectedLang.text}}
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <button class="dropdown-item" *ngFor="let lang of languages"
+      [ngClass]="lang.code === selectedLang.code ? 'active': ''" (click)="changeLang(lang.code)">
+      {{lang.text}}
+    </button>
+  </div>
+</div>

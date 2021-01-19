@@ -1,0 +1,33 @@
+﻿.fa-spin, .fa-pulse {
+  animation-duration: .75s !important;
+  color: var(--info);
+}
+
+.btn .fa-pulse {
+  color: inherit;
+}
+
+.simplebar-track.simplebar-vertical{
+  width:10px !important;
+}
+
+.simplebar-track.simplebar-horizontal{
+  height:10px !important;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar{
+  height:6px !important;
+}
+
+.table thead th{
+  border-top:none;
+  font-weight: 600;
+}
+
+ngx-simplebar.gutter{
+  padding-right:8px;
+}
+
+.pr-simplebar{
+  margin-right:10px;
+}

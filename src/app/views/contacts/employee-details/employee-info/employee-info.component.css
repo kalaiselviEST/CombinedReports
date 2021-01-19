@@ -1,0 +1,14 @@
+tbody tr td:nth-child(3),
+tbody tr td:nth-child(5),
+tbody tr:first-child th:nth-child(2),
+tbody tr th:nth-child(3) {
+    padding-left: 10px !important;
+}
+
+tbody tr th {
+    font-size: 0.85em;
+}
+
+.custom-control {
+    padding-left: 1.1rem;
+}

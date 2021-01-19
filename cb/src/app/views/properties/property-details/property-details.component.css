@@ -1,0 +1,8 @@
+.field-cols tbody tr td:first-child,
+.field-cols tbody tr td:nth-child(3){
+    width: 120px;
+}
+
+.field-cols tbody tr td:nth-child(3){
+    padding-left: 10px !important;
+}

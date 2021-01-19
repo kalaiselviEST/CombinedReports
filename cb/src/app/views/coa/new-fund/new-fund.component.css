@@ -1,0 +1,12 @@
+table tbody tr td:first-child,
+table tbody tr td:nth-child(3) {
+    width: 80px;
+}
+
+table tbody tr td:nth-child(2) {
+    width: 300px;
+}
+
+table tbody tr td:nth-child(3) {
+    padding-left: 10px !important;
+}

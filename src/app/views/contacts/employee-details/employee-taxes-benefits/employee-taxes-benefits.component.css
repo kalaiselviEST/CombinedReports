@@ -1,0 +1,22 @@
+.table-comm {
+    max-height: 150px;
+}
+
+.font-weight-semibold {
+    font-weight: 600;
+}
+
+tbody tr th {
+    font-size: 0.85em;
+}
+
+.table-sm:not(.table-striped) tbody tr td:first-child,
+.table-sm:not(.table-striped) tbody tr td:nth-child(3) {
+    width: 120px;
+}
+
+.table-sm:not(.table-striped) tbody tr td:nth-child(2),
+.table-sm:not(.table-striped) tbody tr td:nth-child(4) {
+    padding-right: 16px !important;
+    width: 300px;
+}

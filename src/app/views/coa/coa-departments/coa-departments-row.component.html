@@ -1,0 +1,45 @@
+<ng-container *ngFor="let department of filtereddepartments; let i = index;">
+
+  <div class="table-row translate-up" [style.animation-delay.s]="i * 0.025">
+    <div class="table-cell">
+      <div class="custom-control custom-checkbox" *ngIf="!department.isLoading">
+        <input type="checkbox" class="custom-control-input" [id]="'chk_' + department.id" [checked]="department.isActive"
+          (change)="toggleActive(department)">
+        <label class="custom-control-label" [for]="'chk_' + department.id"></label>
+      </div>
+      <span class="" *ngIf="department.isLoading">
+        <i class="fas fa-spinner fa-spin ml-1"></i>
+      </span>
+    </div>
+    <div class="table-cell">{{department.number}}</div>
+    <div class="table-cell"><a class="table-link" [routerLink]="'edit/' + department.id"
+        [innerHTML]="(isSearch?department.fullName: department.name) | highlight:searchKey"></a></div>
+    <div class="table-cell" [innerHTML]="department.description | highlight:searchKey">
+    </div>
+    <div class="table-cell text-center no-truncate">
+      <span class="table-action" *ngIf="department.isFromPortal && !department.isDeleting">
+        <button class="btn btn-xs" (click)="deleteConfirm(department)"><i class="fas fa-trash text-danger"></i></button>
+      </span>
+      <span class="table-confirm-action" *ngIf="department.isDeleting">
+        <span class="confirm-text">Are you sure to delete?</span>
+        <button class="btn btn-xs mr-1" (click)="department.isDeleting = false"><i
+            class="fas fa-times text-success"></i></button>
+        <button class="btn btn-xs" (click)="deleteDepartment(department, i)"><i class="fas fa-check text-danger"></i></button>
+      </span>
+    </div>
+  </div>
+  <coa-departments-row [parentID]="department.id" *ngIf="department.hasChildren && !isSearch" class="table-row-component"></coa-departments-row>
+
+</ng-container>
+
+<div class="table-no-data" *ngIf="isSearch && filtereddepartments.length == 0">
+  <i class="fas fa-search fa-3x mb-4 text-info icon-no-results"></i>
+  <p>
+    No Records Found for "{{searchKey}}"<br />
+    Try a different keyword
+  </p>
+</div>
+
+<!-- 
+  <coa-accounts-row [accounts]="accounts" [accountTypes]="accountTypes" *ngIf="hasChildren(account)" [parentID]="account.id">
+  </coa-accounts-row> -->

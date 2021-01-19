@@ -1,0 +1,78 @@
+<div class="d-flex my-2">
+  <h1 class="page-title mb-0">Accounts</h1>
+  <span class="mr-auto ml-3">
+    <ng-container *ngIf="internalLoading">
+      <i class="fas fa-spinner fa-spin mr-1"></i>
+      <span class="text-muted">{{getName(currAjaxId)}}</span>
+    </ng-container>
+  </span>
+  <button class="btn btn-xs btn-info mr-0 px" [routerLink]="[newAccUrl]"><i class="fas fa-plus mr-1"></i>New
+    Account</button>
+</div>
+<fieldset [disabled]="isListLoading || internalLoading">
+  <section class="filter-strip mb-2 border">
+    <div class="search-control" [ngClass]="{'loading': searchLoading}">
+      <input type="search" class="form-control form-control-xs" placeholder="Type here to search"
+        [(ngModel)]="searchKey" (ngModelChange)="sendSearch()" />
+    </div>
+    <dropdown-select class="mr-2" buttonClass="btn-dropdown" menuClass="dropdown-menu-right"
+      [dropdownItems]="accountTypes" dropdownLabel="Account Type: " (itemChange)="selectAccountType($event)"
+      *ngIf="accountTypes.length > 0">
+    </dropdown-select>
+    <div class="custom-control custom-switch mr-2">
+      <input type="checkbox" class="custom-control-input" id="filterStripInactive" [(ngModel)]="showInactive"
+        (change)="fetchAccounts()">
+      <label class="custom-control-label" for="filterStripInactive">Show Inactive</label>
+    </div>
+    <button class="btn btn-xs mr-2" ngbTooltip="Clear all filters" placement="top" (click)="clearFilters()">
+      <i class="fas fa-times text-danger"></i>
+    </button>
+  </section>
+</fieldset>
+<ngx-simplebar class="table-overflow table-overflow-sm">
+
+  <div class="table-mimic table-xs">
+    <div class="table-head">
+      <span class="column-header">
+        &nbsp;
+      </span>
+      <span class="column-header">
+        #
+      </span>
+      <span class="column-header">
+        Account Name
+      </span>
+      <span class="column-header">
+        Description
+      </span>
+      <span class="column-header">
+        Account Type
+      </span>
+
+      <span class="column-header">
+        W2Box #
+      </span>
+
+
+      <span class="column-header">
+        1099Box #
+      </span>
+      <span class="column-header">
+        &nbsp;
+      </span>
+    </div>
+    <div class="table-loader" *ngIf="isListLoading">
+      <dot-loader loadingText="Fetching Accounts<br/>This might take a while"></dot-loader>
+    </div>
+    <div class="table-no-data" *ngIf="!isListLoading && accountSvc.accounts.length == 0">
+      No Records Found
+    </div>
+
+    <div class="table-body" *ngIf="!isListLoading" #tbody [ngClass]="{'searching' : searchKey.length != 0}">
+      <coa-accounts-row class="table-row-component" [parentID]="null" [searchObs]="searchSbj.asObservable()"></coa-accounts-row>
+    </div>
+  </div>
+
+</ngx-simplebar>
+
+<router-outlet></router-outlet>

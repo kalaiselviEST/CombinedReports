@@ -1,0 +1,29 @@
+<section class="contact-basic-info dot-loader-overlay mt-2">
+    
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.owners}" (click)="selectTab('owners')">Owners </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.salesHistory}" (click)="selectTab('salesHistory')">Sales History</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.valuationHistory}" (click)="selectTab('valuationHistory')">Valuation History </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.taxBillingHistory}" (click)="selectTab('taxBillingHistory')">Tax Billing History </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.notesComments}" (click)="selectTab('notesComments')">Notes/Comments </button>
+                </li>
+            </ul>
+
+            <owners [changeObs]="ownersObs" *ngIf="activeTab.owners"></owners>
+            <sales-history [changeObs]="salesHistoryObs" *ngIf="activeTab.salesHistory"></sales-history>
+            <valuation-history [changeObs]="valuationHistoryObs" *ngIf="activeTab.valuationHistory"></valuation-history>
+            <tax-billing-history [changeObs]="taxBillingHistoryObs" *ngIf="activeTab.taxBillingHistory"></tax-billing-history>
+
+        </div>
+
+</section>

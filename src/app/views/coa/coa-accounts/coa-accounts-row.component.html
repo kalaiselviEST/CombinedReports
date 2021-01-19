@@ -1,0 +1,45 @@
+<ng-container *ngFor="let account of filteredAccounts; let i = index;">
+
+  <div class="table-row">
+    <div class="table-cell">
+      <div class="custom-control custom-checkbox" *ngIf="!account.isLoading">
+        <input type="checkbox" class="custom-control-input" [id]="'chk_' + account.id" [checked]="account.isActive"
+          (change)="toggleActive(account)">
+        <label class="custom-control-label" [for]="'chk_' + account.id"></label>
+      </div>
+      <span class="" *ngIf="account.isLoading">
+        <i class="fas fa-spinner fa-spin ml-1"></i>
+      </span>
+    </div>
+    <div class="table-cell">{{account.number}}</div>
+    <div class="table-cell"><a class="table-link" [routerLink]="'edit/' + account.id"
+        [innerHTML]="(isSearch?account.fullName: account.name) | highlight:searchKey"></a></div>
+    <div class="table-cell" [innerHTML]="account.description | highlight:searchKey"></div>
+    <div class="table-cell">{{ account.typeName}}</div>
+    <div class="table-cell">{{account.boxW2Number}}</div>
+    <div class="table-cell">{{account.box1099Number}}</div>
+    <div class="table-cell text-center no-truncate">
+      <span class="table-action" *ngIf="account.isFromPortal && !account.isDeleting">
+        <button class="btn btn-xs" (click)="deleteConfirm(account)"><i class="fas fa-trash text-danger"></i></button>
+      </span>
+      <span class="table-confirm-action" *ngIf="account.isDeleting">
+        <span class="confirm-text">Are you sure to delete?</span>
+        <button class="btn btn-xs mr-1" (click)="account.isDeleting = false"><i
+            class="fas fa-times text-success"></i></button>
+        <button class="btn btn-xs" (click)="deleteAccount(account, i)"><i class="fas fa-check text-danger"></i></button>
+      </span>
+    </div>
+  </div>
+
+  <coa-accounts-row [parentID]="account.id" *ngIf="account.hasChildren && !isSearch" class="table-row-component">
+  </coa-accounts-row>
+
+</ng-container>
+
+<div class="table-no-data" *ngIf="isSearch && filteredAccounts.length == 0">
+  <i class="fas fa-search fa-3x mb-4 text-info icon-no-results"></i>
+  <p>
+    No Records Found for "{{searchKey}}"<br />
+    Try a different keyword
+  </p>
+</div>

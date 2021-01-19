@@ -1,0 +1,121 @@
+<section class="dot-loader-overlay mt-3" [ngClass]="{'border-0':isLoading}">
+    <fieldset [disabled]="!editable">
+        <label class="font-weight-semibold text-info">Employment Activities</label>
+        <ngx-simplebar class="table-overflow table-overflow-sm table-comm mb-3">
+            <table class="table table-sm table-xs table-field-exclusive bg-white table-striped">
+                <thead class="header-nowrap header-align-bottom">
+                    <tr>
+                        <td style="width:100px">Date</td>
+                        <td>Activity Description</td>
+                        <td style="width:100px">Time</td>
+                        <td style="width:100px">Seasonal</td>
+                        <td>Job Title</td>
+                        <td style="width:100px">Rate</td>
+                    </tr>
+                </thead>
+                <tbody class="table-no-padding">
+                    <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                        <td>
+                            <input class="form-control form-control-xs" value="12-31-98" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Hired" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Full-Time" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="No" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Maintenance Manager" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="$ 20.00" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ngx-simplebar>
+
+        <label class="font-weight-semibold text-info">Leave of Absence Activities</label>
+        <ngx-simplebar class="table-overflow table-overflow-sm table-leave mb-3">
+            <table class="table table-sm table-xs table-field-exclusive bg-white table-striped">
+                <thead class="header-nowrap header-align-middle">
+                    <tr>
+                        <td style="width:100px">Start Date</td>
+                        <td style="width:100px" class="wrap">Expected Return Date</td>
+                        <td style="width:100px" class="wrap">Actual Return Date</td>
+                        <td>Type of Leave</td>
+                        <td>Reason for Leave</td>
+                        <td style="width:100px">Leave Paid?</td>
+                    </tr>
+                </thead>
+                <tbody class="table-no-padding">
+                    <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                        <td>
+                            <input class="form-control form-control-xs" value="05-02-01" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="05-15-01" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="05-15-01" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Family Medical" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Son was in a car accident" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="No" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ngx-simplebar>
+
+        <label class="font-weight-semibold text-info">Termination Activities</label>
+        <ngx-simplebar class="table-overflow table-overflow-sm table-leave mb-2">
+            <table class="table table-sm table-xs table-field-exclusive bg-white table-striped">
+                <thead class="header-nowrap header-align-middle">
+                    <tr>
+                        <td style="width:90px" class="wrap">Last Date Worked</td>
+                        <td style="width:100px" class="wrap">Last Day On Benefits</td>
+                        <td style="width:100px" class="wrap">Last Paycheck</td>
+                        <td>Termination Type / Reason</td>
+                        <td style="width:100px" class="wrap">Recommend Rehire?</td>
+                        <td style="width:100px" class="wrap">Protest Unemployment?</td>
+                        <td style="width:80px" class="wrap">Severance Paid?</td>
+                    </tr>
+                </thead>
+                <tbody class="table-no-padding">
+                    <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                        <td>
+                            <input class="form-control form-control-xs" value="06-30-20" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="07-31-20" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="07-15-20" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Resigned / Left for the Peace" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Yes" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="No" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="No" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ngx-simplebar>
+    </fieldset>
+</section>

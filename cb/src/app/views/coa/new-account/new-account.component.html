@@ -1,0 +1,98 @@
+<ng-template #content let-modal backdrop="static">
+  <div class="modal-header">
+    <div class="d-flex align-items-center">
+      <span class="mr-auto" *ngIf="formIsProcessing">
+        <i class="fas fa-spinner fa-spin"></i>
+        {{processingTest}}
+      </span>
+      <button type="button" class="btn btn-sm btn-light ml-auto" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+      </button>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="modal-title" id="modal-basic-title">{{ isEdit?'Edit':'New'}} Account</h5>
+
+      <div class="btn-group mr-2">
+        <button type="button" class="btn btn-xs btn-success"
+          [disabled]="accountForm.invalid || formIsProcessing || accountParentIdRequired || accountTypeRequired || !account.isFromPortal"
+          (click)="submitForm(true)">
+          <i class="fas fa-check mr-1"></i>Save & Close</button>
+        <div class="btn-group" ngbDropdown placement="bottom-right" role="group"
+          aria-label="Button group with nested dropdown">
+          <button class="btn btn-xs btn-success dropdown-toggle-split" ngbDropdownToggle
+            [disabled]="accountForm.invalid || formIsProcessing || accountParentIdRequired || !account.isFromPortal"></button>
+          <div class="dropdown-menu dropdown-menu-xs" ngbDropdownMenu>
+            <button ngbDropdownItem (click)="submitForm(false)"
+              [disabled]="accountForm.invalid || formIsProcessing || accountParentIdRequired || accountTypeRequired || !account.isFromPortal">Save</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="accountForm" novalidate>
+      <fieldset [disabled]="!account.isFromPortal">
+
+        <table class="table-sm table-xs table-no-padding w-100">
+          <tbody>
+            <tr>
+              <td><label class="mb-0">Sub Of</label></td>
+              <td>
+                <account-select menuClass="shadow rounded" buttonClass="form-control form-control-sm"
+                  (accountChange)="selectAccount($event)" [valid]="!accountParentIdRequired"
+                  [resetObs]="resetAcc.asObservable()">
+                </account-select>
+              </td>
+
+              <td><label class="mb-0">W2 Box</label></td>
+              <td>
+                <box-w2-select menuClass="shadow rounded" buttonClass="form-control form-control-sm"
+                  (boxChange)="selectBoxW2($event)" [valid]="true" [resetObs]="resetBoxW2.asObservable()">
+                </box-w2-select>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="mb-0 pr-3 text-nowrap">Account Type</label></td>
+              <td>
+                <account-type-select menuClass="shadow rounded" buttonClass="form-control form-control-sm"
+                  (typeChange)="selectType($event)" [valid]="!accountParentIdRequired"
+                  [resetObs]="resetType.asObservable()" [disabled]="true">
+                </account-type-select>
+              </td>
+
+              <td><label class="mb-0 pr-3 text-nowrap">1099 Box</label></td>
+              <td>
+                <box-1099-select menuClass="shadow rounded" buttonClass="form-control form-control-sm"
+                  (boxChange)="selectBox1099($event)" [valid]="true" [resetObs]="resetBox1099.asObservable()">
+                </box-1099-select>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="mb-0">Number</label></td>
+              <td><input class="form-control form-control-sm" [formControl]="accountNumber" maxlength="50" required
+                  [ngClass]="{
+            'border-danger': accountNumber.invalid && (accountNumber.dirty || accountNumber.touched)
+          }" /></td>
+
+            </tr>
+            <tr>
+              <td><label class="mb-0">Name</label></td>
+              <td><input class="form-control form-control-sm" [formControl]="accountName" required [ngClass]="{
+              'border-danger': accountName.invalid && (accountName.dirty || accountName.touched)
+            }" /></td>
+
+            </tr>
+            <tr>
+              <td class="align-top"><label class="mb-0">Description</label></td>
+              <td><textarea class="form-control form-control-sm" rows="4" [formControl]="accountDescription" [ngClass]="{
+              'border-danger': accountDescription.invalid && (accountDescription.dirty || accountDescription.touched)
+            }"></textarea></td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </form>
+
+  </div>
+</ng-template>

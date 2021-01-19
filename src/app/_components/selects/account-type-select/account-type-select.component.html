@@ -1,0 +1,21 @@
+<div ngbDropdown (openChange)="openChange($event)">
+
+  <button class="text-left" [ngClass]="buttonClass" ngbDropdownToggle [disabled]="disabled">
+    <span class="mr-2 text-primary">{{selectedType.number}}</span>{{selectedType.name}}
+    <span class="text-danger" *ngIf="!valid">Required Field</span>
+  </button>
+  <div ngbDropdownMenu [ngClass]="menuClass" display="dynamic">
+    <form class="px-3" #formSearch>
+      <input class="form-control form-control-sm form-control-xs" placeholder="Type to search" autofocus
+        [(ngModel)]="searchKey" (ngModelChange)="search()" [ngModelOptions]="{standalone: true}" />
+    </form>
+    <ng-container +ngIf="filteredTypes.length > 0">
+      <button ngbDropdownItem *ngFor="let item of filteredTypes" (click)="selectItem(item)">
+        <span class="mr-2 text-primary">{{item.number}}</span>{{item.name}}
+      </button>
+    </ng-container>
+    <p class="mb-0 text-muted px-3" *ngIf="filteredTypes.length == 0">
+      <em>No results</em>
+    </p>
+  </div>
+</div>

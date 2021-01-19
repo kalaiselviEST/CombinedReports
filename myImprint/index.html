@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="shortcut icon" type="image/png" href="./assets/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://kit.fontawesome.com/6ad5134c9c.js"></script>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- jQuery-UI Framework -->
+    <script src="assets\js\jQueryUI\jquery-ui.min.js"></script>
+    <link href="assets\js\jQueryUI\jquery-ui.structure.min.css" rel="stylesheet" />
+    <link href="assets\js\jQueryUI\jquery-ui.min.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Cosmo from bootswatch -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Overrides-->
+    <link href="assets/css/bootstrap.overrides.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.xxl.css" rel="stylesheet" />
+
+    <!-- Strawberry CSS-->
+    <link href="assets/css/strawberry.css" rel="stylesheet" />
+    <link href="assets/css/strawberry.min.768.css" rel="stylesheet" />
+    <!-- Responsive CSS -->
+    <link href="assets/css/strawberry.utilities.css" rel="stylesheet" />
+    <!-- Utility CSS -->
+
+    <!-- Strawberry JS-->
+    <script src="assets/js/strawberry.core.js"></script>
+    <script src="assets/js/strawberry.js"></script>
+    <script src="assets/js/app_modules/scheduler.js"></script>
+</head>
+
+<body>
+    <div id="wrapper" class="toggled">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" class="d-none d-lg-block">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand py-2 mb-3">
+                    <a href="/" class="pl-0">
+                        <img src="./assets/img/logo.png" width="180px">
+                    </a>
+                </li>
+                <li class="d-none">
+                    <a href="#" data-workspace-src="dashboard" data-title=""
+                        data-page-header="Redirect">
+                        Empty
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="" data-workspace-src="dashboard" data-title="Dashboard - MyImprint">
+                        <i class="fas fa-chart-line fa-fw mr-1"></i> Dashboard
+                    </a>
+                </li>
+               
+                <li class="clearfix">
+                    <div class="submenu-wrapper">
+                        <a class="" data-toggle="submenu" data-target="#ddTt" aria-haspopup="true" aria-expanded="false"
+                            href="#">
+                            <i class="fas fa-cogs fa-fw mr-1"></i> Tell the World
+                            <span class="fas fa-caret-right float-right"></span>
+                        </a>
+                        
+                        <div class="submenu" id="ddTt" data-parent=".sidebar-nav">
+                            <a class="submenu-item" href="#" data-workspace-src="logo"
+                                data-title="Users - ">Logos</a>
+                            <a class="submenu-item" href="#" data-workspace-src="environmental-policy"
+                                data-title="User Roles - ">Environmental Policy</a>
+                                <a class="submenu-item" href="#" data-workspace-src="company-statements"
+                                data-title="User Roles - ">Company Statements</a>
+                                <a class="submenu-item" href="#" data-workspace-src="photo-log"
+                                data-title="User Roles - ">Photo Log</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="">
+                    <a href="#" data-workspace-src="orders" data-title="Orders - ">
+                        <i class="fas fa-tasks fa-fw mr-1"></i> Offsetting
+                    </a>
+                </li>
+
+                <li class="clearfix">
+                    <div class="submenu-wrapper">
+                        <a class="" data-toggle="submenu" data-target="#ddTt" aria-haspopup="true" aria-expanded="false"
+                            href="#">
+                            <i class="fas fa-cogs fa-fw mr-1"></i> Details
+                            <span class="fas fa-caret-right float-right"></span>
+                        </a>
+                        
+                        <div class="submenu" id="ddTt" data-parent=".sidebar-nav">
+                            <a class="submenu-item" href="#" data-workspace-src="users"
+                                data-title="Users - ">Results</a>
+                            <a class="submenu-item" href="#" data-workspace-src="user-roles"
+                                data-title="User Roles - ">Data</a>
+                                <a class="submenu-item" href="#" data-workspace-src="configuration"
+                                data-title="User Roles - ">Projects</a>
+                                <a class="submenu-item" href="#" data-workspace-src="configuration"
+                                data-title="User Roles - ">Reports</a>
+                        </div>
+                    </div>
+                </li>
+
+                
+                <li class="clearfix">
+                    <div class="submenu-wrapper">
+                        <a class="" data-toggle="submenu" data-target="#ddTt" aria-haspopup="true" aria-expanded="false"
+                            href="#">
+                            <i class="fas fa-cogs fa-fw mr-1"></i> Admin
+                            <span class="fas fa-caret-right float-right"></span>
+                        </a>
+                        
+                        <div class="submenu" id="ddTt" data-parent=".sidebar-nav">
+                            <a class="submenu-item" href="#" data-workspace-src="users"
+                                data-title="Users - ">Business Profile</a>
+                            <a class="submenu-item" href="#" data-workspace-src="user-roles"
+                                data-title="User Roles - ">Xero Configuration</a>
+                                <a class="submenu-item" href="#" data-workspace-src="configuration"
+                                data-title="User Roles - ">Contact</a>
+                                <a class="submenu-item" href="#" data-workspace-src="configuration"
+                                data-title="User Roles - ">Help</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--/ Sidebar -->
+
+        <!-- Page -->
+        <div id="page-content-wrapper">
+            <div class="page-header clearfix shadow-sm">
+                <div class="float-left">
+                    <i class="fas fa-bars menu-toggle" ></i>
+                    <!-- <div class="header-title">
+                        Home
+                    </div> -->
+                   
+                </div>
+
+                <div class="float-right pl-3">
+                    <div class="dropdown d-inline-block header-user">
+                        <div data-toggle="dropdown">
+                            <span class="sidebar-user-image">
+                                <img src="assets/img/astrid_farnsworth.jpg" />
+                            </span>
+                            <span class="sidebar-user-name">
+                                <small class="mb-0">Andrew Lawton</small>
+                            </span>
+                            <small class="sidebar-user-arrow">
+                                <i class="fas fa-chevron-down mr-2"></i>
+                            </small>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-right shadow-sm" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#profile">
+                                <i class="fas fa-user-circle mr-2"></i>Profile</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>               
+
+            </div>
+            <div class="workspace p-3" id="workspace">
+                <!-- Main content is loaded here -->
+             </div>
+
+        </div>
+
+        <!--/ Page -->
+
+    </div>
+
+    <div class="modal fade" id="clockIn">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body py-4">
+                    <div class="w-50 m-auto">
+                        <div class="form-inline mb-4">
+                            <label class="mb-0 pr-2">Clock In</label>
+                            <select class="form-control form-control-sm" style="width:150px;">
+                                <option>Drill Blast</option>
+                                <option>Drill</option>
+                                <option>Shop</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mb-2">
+                        <div class="text-center text-muted cursor-pointer clock-card p-3 rounded mr-4">
+                            <h4><i class="fa fa-sign-in"></i></h4>
+                            <h5>Clock In</h5>
+                        </div>
+                        <div class="text-center text-muted cursor-pointer clock-card p-3 rounded" data-dismiss="modal"
+                            data-toggle="modal" data-target="#clockOut">
+                            <h4><i class="fa fa-sign-out"></i></h4>
+                            <h5>Clock Out</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="clockOut">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Comments</label>
+                        <textarea class="form-control form-control-sm" rows="4"
+                            placeholder="Type your comments here..."></textarea>
+                    </div>
+                    <button class="btn btn-sm btn-success rounded float-right">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+                    <div class="float-right">
+                        <button type="button" class="btn btn-sm btn-success rounded mr-1">
+                            <i class="fas fa-check mr-1"></i>Save</button>
+                        <button type="button" class="btn btn-sm btn-light rounded" data-dismiss="modal"
+                            aria-label="Close">
+                            <i class="fas fa-times mr-1"></i>Close</button>
+                    </div>
+                </div>
+                <div class="modal-body my-2">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-sm-4 border-right">
+                                <div class="position-relative text-center">
+                                    <img src="assets/img/astrid_farnsworth.jpg" style="height:150px"
+                                        class="img-fluid img-thumbnail bg-white mb-2" alt="Profile Picture" />
+                                    <h6 class="mb-0">Astrid Farnsworth</h6>
+                                    <small class="text-muted">astridfarnsworth@mail.com</small>
+                                    <label class="custom-upload bg-light mt-2 d-block mx-auto">
+                                        <input type="file">
+                                        <i class="fas fa-camera pr-2" aria-hidden="true"></i>Upload Image
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <table class="table table-sm table-borderless align-middle table-fp">
+                                    <tbody>
+                                        <tr>
+                                            <td><label class="mb-0">First Name</label></td>
+                                            <td><input class="form-control form-control-sm" type="text" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="mb-0">Last Name</label></td>
+                                            <td><input class="form-control form-control-sm" type="text" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="mb-0">Contact</label></td>
+                                            <td><input class="form-control form-control-sm" type="text" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="mb-0">Email</label></td>
+                                            <td><input class="form-control form-control-sm" type="text" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="mb-0">Address</label></td>
+                                            <td><input class="form-control form-control-sm" type="text" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="mb-0">City</label></td>
+                                            <td><input class="form-control form-control-sm" type="text" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="mb-0">State</label></td>
+                                            <td><input class="form-control form-control-sm" type="text" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="mb-0">Zip</label></td>
+                                            <td><input class="form-control form-control-sm" type="text" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

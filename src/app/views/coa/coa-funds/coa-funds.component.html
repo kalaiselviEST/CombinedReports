@@ -1,0 +1,54 @@
+<div class="d-flex my-2">
+  <h1 class="page-title mb-0">Funds</h1>
+  <button class="btn btn-xs btn-info ml-auto px" [routerLink]="[newFundUrl]"><i class="fas fa-plus mr-1"></i>New
+    Fund</button>
+</div>
+<section class="filter-strip my-2 border">
+  <div class="search-control" [ngClass]="{'loading': searchLoading}">
+    <input type="search" class="form-control form-control-xs" placeholder="Type here to search" [(ngModel)]="searchKey"
+      (ngModelChange)="sendSearch()" />
+  </div>
+  <div class="custom-control custom-switch mr-2">
+    <input type="checkbox" class="custom-control-input" id="filterStripInactive" [(ngModel)]="showInactive"
+      (change)="fetchFunds()">
+    <label class="custom-control-label" for="filterStripInactive">Show Inactive</label>
+  </div>
+  <button class="btn btn-xs mr-2" ngbTooltip="Clear all filters" placement="top" (click)="clearFilters()">
+    <i class="fas fa-times text-danger"></i>
+  </button>
+</section>
+<ngx-simplebar class="table-overflow table-overflow-sm">
+
+
+  <div class="table-mimic table-xs">
+    <div class="table-head">
+      <span class="column-header">
+        &nbsp;
+      </span>
+      <span class="column-header">
+        #
+      </span>
+      <span class="column-header">
+        Fund Name
+      </span>
+      <span class="column-header">
+        Description
+      </span>
+
+    </div>
+    <div class="table-loader" *ngIf="isListLoading">
+      <dot-loader loadingText="Fetching Funds"></dot-loader>
+    </div>
+    <div class="table-no-data" *ngIf="!isListLoading && fundSvc.funds.length == 0">
+      No Records Found
+    </div>
+
+    <div class="table-body" *ngIf="!isListLoading" #tbody>
+      <coa-funds-row class="table-row-component" [parentID]="null" [searchObs]="searchSbj.asObservable()">
+      </coa-funds-row>
+    </div>
+  </div>
+
+</ngx-simplebar>
+
+<router-outlet></router-outlet>

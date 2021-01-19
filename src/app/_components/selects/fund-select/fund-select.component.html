@@ -1,0 +1,23 @@
+<div ngbDropdown (openChange)="openChange($event)">
+
+  <button class="text-left" [ngClass]="buttonClass" ngbDropdownToggle
+    [ngbTooltip]="selectedFund.name == selectedFund.fullName ? '' : selectedFund.fullName">
+    <span class="mr-2 text-primary">{{selectedFund.number}}</span>{{selectedFund.name}}
+    <span class="text-danger" *ngIf="required && !valid">Required Field</span>
+  </button>
+  <div ngbDropdownMenu [ngClass]="menuClass" display="dynamic">
+    <form class="px-3" #formSearch>
+      <input class="form-control form-control-sm form-control-xs" placeholder="Type to search" autofocus
+        [(ngModel)]="searchKey" (ngModelChange)="search()" [ngModelOptions]="{standalone: true}" />
+    </form>
+    <ng-container +ngIf="filteredFunds.length > 0">
+      <button ngbDropdownItem *ngFor="let item of filteredFunds" (click)="selectItem(item)">
+        <span class="mr-2 text-primary">{{item.number}}</span>
+        <span [innerHTML]="item.fullName | highlight: searchKey"></span>
+      </button>
+    </ng-container>
+    <p class="mb-0 text-muted px-3" *ngIf="filteredFunds.length == 0">
+      <em>No results</em>
+    </p>
+  </div>
+</div>

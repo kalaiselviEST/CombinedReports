@@ -1,0 +1,103 @@
+<section class="dot-loader-overlay mt-3" [ngClass]="{'border-0':isLoading}">
+    <fieldset [disabled]="!editable">
+        <table class="table-sm table-xs table-no-padding w-100">
+            <tbody>
+                <tr>
+                    <th colspan="2">Full Legal Name</th>
+                    <th colspan="4">Direct Deposit</th>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">Title</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <th colspan="4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="directDeposit" checked>
+                            <label class="custom-control-label" for="directDeposit">Use Direct Deposit</label>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">First Name</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <th colspan="4">Deposit a portion of payment to:</th>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">MI</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td><label class="mb-0">Amount</label></td>
+                    <td><input class="form-control form-control-xs w-50 text-right" /></td>
+                    <td colspan="2"></td>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">Last Name</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td><label class="mb-0">Bank Name</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td><label class="mb-0">Account Type</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">Suffix</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td><label class="mb-0">Routing #</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td><label class="mb-0">Account #</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th colspan="4"><label class="mb-0 invisible"></label></th>
+                </tr>
+                <tr>
+                    <th><label class="mb-0">Social Security #</label></th>
+                    <th><input class="form-control form-control-xs" /></th>
+                    <th colspan="4">Deposit the reminder to:</th>
+                </tr>
+                <tr>
+                    <th><label class="mb-0">Date of Birth</label></th>
+                    <th><input class="form-control form-control-xs" /></th>
+                    <td><label class="mb-0">Bank Name</label></td>
+                    <th><input class="form-control form-control-xs" /></th>
+                    <td><label class="mb-0">Account Type</label></td>
+                    <th><input class="form-control form-control-xs" /></th>
+                </tr>
+                <tr>
+                    <td><label class="mb-0 invisible"></label></td>
+                    <td><label class="mb-0 invisible"></label></td>
+                    <td><label class="mb-0">Routing #</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td><label class="mb-0">Account #</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                </tr>
+                <tr>
+                    <th><label class="mb-0">Payroll Frequency</label></th>
+                    <th><input class="form-control form-control-xs" /></th>
+                    <th colspan="4"></th>
+                </tr>
+                <tr>
+                    <td colspan="6"><label class="mb-0 invisible"></label></td>
+                </tr>
+                <tr>
+                    <th colspan="6">Address for W2</th>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">Address 1</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td colspan="4"></td>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">Address 2</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td colspan="4"></td>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">City, State ZIP</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td colspan="4"></td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+
+</section>

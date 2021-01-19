@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark py-0">
+
+  <a class="navbar-brand" href="#">
+    <img src="/assets/images/logo-solid-sm.svg" height="28" class="d-inline-block align-top mr-2" alt="">
+    <strong style="color:#1178bd">Clerk</strong><span style="color:#e8efdf">Books</span>
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <app-breadcrumbs class="navbar-nav mr-auto ml-3"></app-breadcrumbs>
+    <form class="form-inline my-2 my-lg-0 form-search mr-2">
+      <input class="form-control form-control-xs" type="search" placeholder="Type and hit enter"
+        aria-label="Search" />
+    </form>
+    <button class="btn-nav ml-2" placement="bottom" ngbTooltip="Contact Support"><i class="fas fa-headset"></i></button>
+    <button class="btn-nav ml-2" placement="bottom" ngbTooltip="Settings"><i class="fas fa-cog"></i></button>
+    <button class="btn-nav ml-2" placement="bottom" ngbTooltip="Logout" (click)="logout()"><i class="fas fa-sign-out-alt"></i></button>
+  </div>
+
+</nav>

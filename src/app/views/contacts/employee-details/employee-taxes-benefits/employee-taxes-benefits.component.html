@@ -1,0 +1,116 @@
+<section class="dot-loader-overlay mt-3" [ngClass]="{'border-0':isLoading}">
+    <fieldset [disabled]="!editable">
+        <table class="table-sm table-xs table-no-padding w-100 mb-4">
+            <tbody>
+                <tr>
+                    <th colspan="2">Federal</th>
+                    <th colspan="2">State</th>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">Filing Status</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td><label class="mb-0">State Worked In</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">Allowances</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td><label class="mb-0">Filing Status</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">Extra Withholding</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                    <td><label class="mb-0">Allowances</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                </tr>
+                <tr>
+                    <td><label class="mb-0">Subject To</label></td>
+                    <td></td>
+                    <td><label class="mb-0">Extra Withholding</label></td>
+                    <td><input class="form-control form-control-xs" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="medicare" checked>
+                            <label class="custom-control-label" for="medicare">Medicare</label>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <label class="mb-0">Subject To</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="socialSecurity" checked>
+                            <label class="custom-control-label" for="socialSecurity">Social Security</label>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="unempIns" checked>
+                            <label class="custom-control-label" for="unempIns">State Unemployment Insurance (SUI)</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="aEarnedIncome" checked>
+                            <label class="custom-control-label" for="aEarnedIncome">Advanced Earned Income Credit</label>
+                        </div>
+                    </td>
+                    <td colspan="2"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="funempTax" checked>
+                            <label class="custom-control-label" for="funempTax">Federal Unemployment Tax (FUTA)</label>
+                        </div>
+                    </td>
+                    <td colspan="2"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <label class="font-weight-semibold text-info">Other Deductions and Company Contributions</label>
+        <ngx-simplebar class="table-overflow table-overflow-sm table-comm mb-4">
+            <table class="table table-sm table-xs table-field-exclusive bg-white table-striped" data-column-center=".1.">
+                <thead class="header-nowrap header-align-bottom">
+                    <tr>
+                        <td style="width:50px;"></td>
+                        <td style="width:150px">Payroll Fund</td>
+                        <td>Payroll Item</td>
+                        <td style="width:100px">Rate</td>
+                        <td style="width:100px">Limit</td>
+                    </tr>
+                </thead>
+                <tbody class="table-no-padding">
+                    <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="oDCC" checked>
+                                <label class="custom-control-label" for="oDCC"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="(Auto)" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Health Insurance - Employee" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="9.044%" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ngx-simplebar>
+    </fieldset>
+</section>

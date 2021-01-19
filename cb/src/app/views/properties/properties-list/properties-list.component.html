@@ -1,0 +1,74 @@
+<section class="filter-strip mt-2 border" [ngClass]="{'mini':mini}">
+    <div class="search-control">
+        <input type="search" class="form-control form-control-xs" placeholder="Type here to search" />
+    </div>
+    <dropdown-select *ngIf="!mini" class="mr-2" buttonClass="btn-dropdown" menuClass="dropdown-menu-right" [dropdownItems]="transactionTypes" (itemChange)="transactionTypeFilter($event)" dropdownLabel="Contact Type: ">
+    </dropdown-select>
+    <div class="custom-control custom-switch mr-2" *ngIf="!mini">
+        <input type="checkbox" class="custom-control-input" id="filterStripInactive" (change)="dummyLoader()">
+        <label class="custom-control-label" for="filterStripInactive">Show Inactive</label>
+    </div>
+    <button class="btn btn-light btn-xs mr-2" ngbTooltip="Clear all filters" placement="top">
+        <i class="fas fa-times text-danger"></i>
+    </button>
+</section>
+
+
+<section class="d-flex filter-strip border-bottom border-right border-left mb-2" *ngIf="mini">
+    <dropdown-select class="mr-2" buttonClass="btn-dropdown" menuClass="dropdown-menu-right" [dropdownItems]="transactionTypes" (itemChange)="transactionTypeFilter($event)" dropdownLabel="Select Property: ">
+    </dropdown-select>
+    <div class="custom-control custom-switch ml-auto mr-2">
+        <input type="checkbox" class="custom-control-input" id="filterStripInactive" (change)="dummyLoader()">
+        <label class="custom-control-label" for="filterStripInactive">Show Inactive</label>
+    </div>
+</section>
+
+
+<ngx-simplebar class="table-overflow gutter" [options]="{ autoHide: false }">
+    <table class="table table-sm table-xs table-striped table-hover">
+        <thead>
+            <tr>
+                <th style="width:1.5rem">&nbsp;</th>
+                <th>Parcel ID</th>
+                <th>Other ID</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="isListLoading">
+            <tr>
+                <td colspan="10" class="text-center py-5 bg-white">
+                    <dot-loader loadingText="Fetching Contacts"></dot-loader>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="!isListLoading">
+            <tr class="translate-up" *ngFor="let number of sampleArr; let i = index;" [style.animation-delay.s]="i * 0.025" (click)="contactClicked(number)" [ngClass]="{'active': number == selectedId}">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" [id]="'chk_' + number" [checked]="i <= 5">
+                        <label class="custom-control-label" [for]="'chk_' + number"></label>
+                    </div>
+                </td>
+                <td>09-35-101-002</td>
+                <td>3522020007</td>
+                <td>123 E Main St, Demo</td>
+            </tr>
+        </tbody>
+    </table>
+</ngx-simplebar>
+
+<div class="d-flex mt-3">
+
+    <span class="mr-auto d-inline-flex align-items-center">
+    <span class="white-space-nowrap" *ngIf="!mini"> Records per page</span>
+    <select class="form-control form-control-xs ml-1" (change)="dummyLoader()">
+      <!-- <option *ngFor="let item of perPagePagination" [ngValue]="item">{{item}}</option> -->
+      <option>25</option>
+    </select>
+    </span>
+
+    <ngb-pagination class="ml-auto mb-0" (page)="1" [pageSize]="25" [collectionSize]="200" maxSize="3" [rotate]="true" (pageChange)="dummyLoader()">
+        <ng-template ngbPaginationPrevious><i class="fas fa-chevron-left"></i></ng-template>
+        <ng-template ngbPaginationNext><i class="fas fa-chevron-right"></i></ng-template>
+    </ngb-pagination>
+</div>

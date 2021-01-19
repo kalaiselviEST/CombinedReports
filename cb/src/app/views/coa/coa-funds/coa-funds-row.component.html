@@ -1,0 +1,45 @@
+<ng-container *ngFor="let fund of filteredfunds; let i = index;">
+
+  <div class="table-row translate-up" [style.animation-delay.s]="i * 0.025">
+    <div class="table-cell">
+      <div class="custom-control custom-checkbox" *ngIf="!fund.isLoading">
+        <input type="checkbox" class="custom-control-input" [id]="'chk_' + fund.id" [checked]="fund.isActive"
+          (change)="toggleActive(fund)">
+        <label class="custom-control-label" [for]="'chk_' + fund.id"></label>
+      </div>
+      <span class="" *ngIf="fund.isLoading">
+        <i class="fas fa-spinner fa-spin ml-1"></i>
+      </span>
+    </div>
+    <div class="table-cell">{{fund.number}}</div>
+    <div class="table-cell"><a class="table-link" [routerLink]="'edit/' + fund.id"
+        [innerHTML]="(isSearch?fund.fullName: fund.name) | highlight:searchKey"></a></div>
+    <div class="table-cell" [innerHTML]="fund.description | highlight:searchKey">
+    </div>
+    <div class="table-cell text-center no-truncate">
+      <span class="table-action" *ngIf="fund.isFromPortal && !fund.isDeleting">
+        <button class="btn btn-xs" (click)="deleteConfirm(fund)"><i class="fas fa-trash text-danger"></i></button>
+      </span>
+      <span class="table-confirm-action" *ngIf="fund.isDeleting">
+        <span class="confirm-text">Are you sure to delete?</span>
+        <button class="btn btn-xs mr-1" (click)="fund.isDeleting = false"><i
+            class="fas fa-times text-success"></i></button>
+        <button class="btn btn-xs" (click)="deleteFund(fund, i)"><i class="fas fa-check text-danger"></i></button>
+      </span>
+    </div>
+  </div>
+  <coa-funds-row [parentID]="fund.id" *ngIf="fund.hasChildren && !isSearch" class="table-row-component"></coa-funds-row>
+
+</ng-container>
+
+<div class="table-no-data" *ngIf="isSearch && filteredfunds.length == 0">
+  <i class="fas fa-search fa-3x mb-4 text-info icon-no-results"></i>
+  <p>
+    No Records Found for "{{searchKey}}"<br />
+    Try a different keyword
+  </p>
+</div>
+
+<!-- 
+  <coa-accounts-row [accounts]="accounts" [accountTypes]="accountTypes" *ngIf="hasChildren(account)" [parentID]="account.id">
+  </coa-accounts-row> -->

@@ -1,0 +1,50 @@
+.wrapper{ 
+  height: 100vh;
+  background-color: #f9fbff;
+}
+
+.login-wrapper{
+  height: calc(100vh - 85px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-panel{
+  width: 380px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.login-panel-header{ 
+  background-color: #2a3e8c;
+  width: 390px;
+  height: 120px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  position: relative;
+  left: -5px;
+  text-align: center;
+}
+
+.login-panel-header h5{
+  color: white;
+  padding-top: 40px;
+  font-weight: 500;
+}
+
+.user-icon{
+  background: #ebedf7;
+  border-radius: 50%;
+  color: #2a3e8c;
+  padding: 0.55rem 1rem 0.65rem;
+  font-size: 1.2rem;
+  box-shadow: 0 0 0.4rem rgb(162, 190, 148, 0.5);
+  position: absolute;
+  top: calc(100% - 24px);
+  left: 50%;
+  transform: translateX(-50%);   
+}

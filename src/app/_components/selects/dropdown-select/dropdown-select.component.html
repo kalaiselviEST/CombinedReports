@@ -1,0 +1,13 @@
+<div ngbDropdown class="d-inline-block">
+
+  <button [ngClass]="buttonClass" ngbDropdownToggle>
+    <span class="dropdown-label">{{dropdownLabel}}</span>
+    {{selectedItem.text}}
+  </button>
+  <div ngbDropdownMenu [ngClass]="menuClass" display="dynamic">
+    <button ngbDropdownItem *ngFor="let item of dropdownItems" (click)="selectItem(item)">
+
+      {{item.text}}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,108 @@
+<section class="contact-basic-info dot-loader-overlay mt-2 card bg-ligh" [ngClass]="{'border-0':isLoading}">
+    <div class="card-body p-2">
+
+        <div class="d-flex">
+            <strong>
+              <a class="cursor-pointer" (click)="isCollapsed = !isCollapsed; isRotate = !isRotate">
+                <i [@smoothRotate]="isRotate?'initial':'final'" class="fas fa-angle-down text-muted mr-1"></i>
+              Addresses</a></strong>
+            <div class="custom-control custom-switch ml-auto mr-2">
+                <input type="checkbox" class="custom-control-input" id="addressesInactive" (change)="dummyCommActiveToggle()" [(ngModel)]="commShowInactive">
+                <label class="custom-control-label" for="addressesInactive">Show Inactive</label>
+            </div>
+        </div>
+        <fieldset [disabled]="!editable" [@smoothCollapse]="isCollapsed?'initial':'final'">
+            <ngx-simplebar class="table-overflow table-overflow-sm table-comm" (onScroll)="tableScrolled($event)">
+                <table class="table table-sm table-xs table-field-exclusive bg-white table-striped" style="table-layout:fixed;" data-column-center=".1.6.11.12.13.14.15.16.">
+                    <thead class="header-nowrap">
+                        <tr>
+                            <td style="width:30px">&nbsp;</td>
+                            <td class="sticky-left" style="width:150px;">Mailing Name</td>
+                            <td style="width:150px;">Address Line 1</td>
+                            <td style="width:150px;">Address Line 2</td>
+                            <td style="width:150px;">City, Sate, Zip</td>
+                            <td style="width:55px">Mail To</td>
+                            <td style="width:150px;">Zoning</td>
+                            <td style="width:150px;">Ownership</td>
+                            <td style="width:125px;">Moved In</td>
+                            <td style="width:125px;">Moved Out</td>
+                            <td style="width:65px">Customer</td>
+                            <td style="width:85px">Utility Billing</td>
+                            <td style="width:60px">Tax Role</td>
+                            <td style="width:55px">Vendor</td>
+                            <td style="width:65px">Employee</td>
+                        </tr>
+                    </thead>
+                    <tbody class="table-no-padding">
+                        <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" [id]="'chkAdd_' + number" [checked]="i < 3">
+                                    <label class="custom-control-label" [for]="'chkAdd_' + number"></label>
+                                </div>
+                            </td>
+                            <td class="sticky-left"><input class="form-control form-control-xs" value="Harper's Diner" /></td>
+                            <td><input class="form-control form-control-xs" value="123 E Main St" /></td>
+                            <td><input class="form-control form-control-xs" value="PO Box 456" /></td>
+                            <td><input class="form-control form-control-xs" value="Demo, IA 50000-0456" /></td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" [id]="'chkAddMailTo_' + number" [checked]="i % 2">
+                                    <label class="custom-control-label" [for]="'chkAddMailTo_' + number"></label>
+                                </div>
+                            </td>
+                            <td><select class="form-control form-control-xs">
+                <option>Commercial</option>
+                <option>Industrial</option>
+                <option>Agricultural</option>
+                <option>Governmental</option>
+                <option>Multi-Family</option>
+                <option>Residential</option>
+              </select></td>
+                            <td><select class="form-control form-control-xs">
+                <option>Renter</option>
+                <option>Landlord (Copy)</option>
+                <option>Landlord (nocopy)</option>
+              </select></td>
+                            <td><input type="date" class="form-control form-control-xs" value="2007-05-01" /></td>
+                            <td><input type="date" class="form-control form-control-xs" value="" /></td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" [id]="'chkAddCustomer_' + number" [checked]="i % 2">
+                                    <label class="custom-control-label" [for]="'chkAddCustomer_' + number"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" [id]="'chkAddUB_' + number" [checked]="i % 2">
+                                    <label class="custom-control-label" [for]="'chkAddUB_' + number"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" [id]="'chkAddTax_' + number" [checked]="i % 2">
+                                    <label class="custom-control-label" [for]="'chkAddTax_' + number"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" [id]="'chkAddVendor_' + number" [checked]="i % 2">
+                                    <label class="custom-control-label" [for]="'chkAddVendor_' + number"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" [id]="'chkAddEmp_' + number" [checked]="i % 2">
+                                    <label class="custom-control-label" [for]="'chkAddEmp_' + number"></label>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </ngx-simplebar>
+        </fieldset>
+
+    </div>
+    <dot-loader loadingText="Fetching addresses" [ngClass]="{'dot-loader-show':isLoading}" [overlay]="true"></dot-loader>
+</section>

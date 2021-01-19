@@ -1,0 +1,209 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <div class="text-right">
+      <button type="button" class="btn btn-sm btn-light mr-1">
+        <span aria-hidden="true"><i class="fas fa-expand-alt" ngbTooltip="Expand/Collapse" placement="top"></i></span>
+      </button>
+      <button type="button" class="btn btn-sm btn-light" aria-label="Close" ngbAutoFocus (click)="closeModal()">
+        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+      </button>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="modal-title" id="modal-basic-title">{{ (isEdit?'Group Details':'New Group') }}</h5>
+
+      <div>
+        <button type="button" class="btn btn-xs btn-primary" *ngIf="isEdit && !formEditable"
+          (click)="formEditable=true">
+          <i class="fas fa-pencil-alt mr-1"></i>Edit</button>
+
+        <div class="btn-group" *ngIf="formEditable || !isEdit">
+          <button type="button" class="btn btn-xs btn-success" (click)="submitForm(false)"
+            [disabled]="!groupForm.valid"><i class="fas fa-check mr-1"></i>Save & New</button>
+
+          <div class="btn-group" ngbDropdown placement="bottom-right" role="group"
+            aria-label="Button group with nested dropdown">
+            <button class="btn btn-xs btn-success dropdown-toggle-split" ngbDropdownToggle
+              [disabled]="!groupForm.valid"></button>
+            <div class="dropdown-menu dropdown-menu-xs" ngbDropdownMenu>
+              <button ngbDropdownItem [disabled]="!groupForm.valid" (click)="submitForm(true)">Save & Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="groupForm" novalidate>
+      <fieldset [disabled]="!formEditable || formIsProcessing">
+        <table class="table-sm table-xs table-no-padding w-100">
+          <tbody>
+            <tr>
+              <td><label class="mb-0">Type</label></td>
+              <td>
+                <item-type-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetType.asObservable()" (groupTypeChange)="selectGroupType($event)">
+                </item-type-select>
+              </td>
+              <td><label class="mb-0">Fund</label></td>
+              <td>
+                <fund-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetFund.asObservable()" (fundChange)="selectFund($event)">
+                </fund-select>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="mb-0">Name</label></td>
+              <td><input class="form-control form-control-xs" [formControl]="groupName" /></td>
+              <td><label class="mb-0">Department</label></td>
+              <td>
+                <department-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetDept.asObservable()" (departmentChange)="selectDepartment($event)">
+                </department-select>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="mb-0">Sub Of</label></td>
+              <td>
+                <item-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetParent.asObservable()" (itemChange)="selectParent($event)" [itemType]="group.groupTypeID">
+                </item-select>
+              </td>
+              <td><label class="mb-0">Account</label></td>
+              <td>
+                <account-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetAcc.asObservable()" (accountChange)="selectAccount($event)">
+                </account-select>
+              </td>
+            </tr>
+
+            <tr>
+              <td [ngClass]="{'d-none': groupCategory != GroupTypeCategory.payrollEarning}"><label class="mb-0">Default Tax Group</label></td>
+              <td [ngClass]="{'d-none': groupCategory != GroupTypeCategory.payrollEarning}">
+                <item-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetSalesTax.asObservable()" (itemChange)="selectTaxGroup($event)"
+                  itemType="54b450aa-62bc-43af-b48a-8324bddf69a2">
+                </item-select>
+              </td>
+              <td class="align-top" [ngClass]="{'d-none': groupCategory != GroupTypeCategory.payrollDedCon}"><label
+                  class="mb-0">Liability Account</label></td>
+              <td class="align-top" [ngClass]="{'d-none': groupCategory != GroupTypeCategory.payrollDedCon}">
+                <account-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetLAcc.asObservable()" [valid]="true" (accountChange)="selectLAccount($event)">
+                </account-select>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="align-top"><label class="mb-0">Description</label></td>
+              <td><textarea class="form-control form-control-ta" rows="4" [formControl]="groupDescription"></textarea>
+              </td>
+              <td colspan="2"></td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table-sm table-xs table-no-padding w-100 mt-3"
+          [ngClass]="{'d-none': groupCategory != GroupTypeCategory.payrollDedCon && groupCategory != GroupTypeCategory.payroll}">
+          <tbody>
+            <tr>
+              <th colspan="4">Payroll Details</th>
+            </tr>
+            <tr>
+              <td><label class="mb-0">Payable To</label></td>
+              <td>
+                <payable-to-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetPayTo.asObservable()" (payableToChange)="selectPayTo($event)">
+                </payable-to-select>
+              </td>
+              <td>&nbsp;</td>
+              <td>
+                <div class="custom-control custom-checkbox form-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="itemPreTax" [formControl]="preTax">
+                  <label class="custom-control-label" for="itemPreTax">Pre-Tax</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="mb-0">Account ID</label></td>
+              <td><input class="form-control form-control-xs" [formControl]="payrollAccId" /></td>
+              <td><label class="mb-0">Calculate after</label></td>
+              <td>
+                <div class="custom-control custom-radio custom-control-inline form-checkbox">
+                  <input type="radio" id="grossNet" name="grossNet" class="custom-control-input"
+                    [formControl]="grossNet">
+                  <label class="custom-control-label" for="grossNet">Gross</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="grossNet" name="grossNet" class="custom-control-input"
+                    [formControl]="grossNet">
+                  <label class="custom-control-label" for="grossNet">Net</label>
+                </div>
+                <!-- <input class="form-control form-control-xs d-none" [formControl]="grossNet" /> -->
+              </td>
+            </tr>
+            <tr>
+              <td><label class="mb-0">Limit</label></td>
+              <td><input class="form-control form-control-xs" type="number" [formControl]="limit" /></td>
+              <td><label class="mb-0">W-2 Box</label></td>
+              <td>
+                <box-w2-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetBoxW2.asObservable()" [valid]="true" (boxChange)="selectBoxW2($event)">
+                </box-w2-select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4"><label class="mb-0 invisible"></label></td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table-sm table-xs table-no-padding w-100 mt-3"
+          [ngClass]="{'d-none': groupCategory != GroupTypeCategory.utility}">
+          <tbody>
+            <tr>
+              <th colspan="4">Utility Billing Details</th>
+            </tr>
+            <tr>
+              <td><label class="mb-0">Service Type</label></td>
+              <td>
+                <ub-service-type-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [valid]="true" [resetObs]="resetServiceType.asObservable()"
+                  (utilityBillingTypeChange)="selectServiceType($event)">
+                </ub-service-type-select>
+              </td>
+              <td colspan="2"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>
+                <div class="custom-control custom-checkbox form-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="itemTaxable" [formControl]="taxable">
+                  <label class="custom-control-label" for="itemTaxable">Taxable</label>
+                </div>
+              </td>
+              <td colspan="2"></td>
+            </tr>
+
+          </tbody>
+        </table>
+        <table class="table-sm table-xs table-no-padding w-100 mt-3"
+          [ngClass]="{'d-none': groupCategory != GroupTypeCategory.otherExpense}">
+          <tbody>
+            <tr>
+              <th colspan="4">Contractual Services Details</th>
+            </tr>
+            <tr>
+              <td><label class="mb-0">1099 Box</label></td>
+              <td>
+                <box-1099-select menuClass="shadow rounded" buttonClass="form-control form-control-xs"
+                  [resetObs]="resetBox1099.asObservable()" [valid]="true" (boxChange)="selectBox1099($event)">
+                </box-1099-select>
+              </td>
+              <td colspan="2"></td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </form>
+
+  </div>
+</ng-template>

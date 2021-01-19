@@ -1,0 +1,38 @@
+.background {
+  background-image: url('/assets/images/macbook-pro-iphone-cup-desk-7974.jpg');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+  
+.portal-panel {
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width:1000px;
+}
+
+label{
+  font-size: 1rem;
+}
+
+.list-group-item{
+  text-align: left;
+  padding: .5rem .75rem;
+}
+
+.list-group{
+  height: 350px;
+  overflow-y: auto;
+}
+
+@media (max-width: 1540px){
+  .login-panel {
+    width: 70%;
+  }
+}

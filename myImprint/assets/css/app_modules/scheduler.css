@@ -1,0 +1,94 @@
+.monthly-schedule-table {
+    margin-bottom: 0;
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+.monthly-schedule-table tbody tr td {
+    height: 106px;
+    padding: 0px;
+    border: none;
+}
+
+.td-wrapper {
+    height: 100%;
+    border-right: 1px solid #ecf0f1;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.td-wrapper div {
+    margin: 1px;
+}
+
+.monthly-schedule-table .date {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.active-date {
+    background: #ecf0f1;
+}
+
+.monthly-event-list {
+    height: 60px;
+}
+
+.event-item,
+.holiday-list {
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 4px;
+    color: white;
+    padding: 1px 4px;
+    font-size: 0.7rem;
+    width: 100%;
+    position: relative;
+}
+
+.monthly-event-list .event-item,
+li .event-item {
+    cursor: pointer;
+    background-color: #174e8c;
+}
+
+.holiday-list {
+    background-color: #FBC02D;
+    color: black;
+}
+
+.td-wrapper .dropdown-menu {
+    padding: 4px;
+    max-height: 100px !important;
+    overflow: auto !important;
+}
+
+.event-item span {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: inherit;
+    padding: 0px 2px 0px 4px;
+}
+
+.event-item:hover span {
+    display: inline;
+}
+
+.selected-td {
+    width: 100%;
+    height: 19px;
+    border: 1px dashed #b2b2b2;
+    background-color: rgba(171, 171, 171, 0.3);
+}
+
+.ui-state-highlight {
+    position: relative;
+    height: 19px;
+    border: 1px dashed #b2b2b2;
+    background-color: rgba(171, 171, 171, 0.3);
+    width: 100%;
+}
+
+.event-transition {
+    transition: .1s ease-out;
+}

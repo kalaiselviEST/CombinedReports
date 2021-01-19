@@ -1,0 +1,11 @@
+.language-switch {
+  position: fixed;
+  top: .5rem;
+  right: .5rem;
+  z-index: 3;
+}
+
+.language-switch .btn-lang {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--light);
+}

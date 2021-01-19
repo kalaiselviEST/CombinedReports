@@ -1,0 +1,110 @@
+<section class="dot-loader-overlay mt-3" [ngClass]="{'border-0':isLoading}">
+    <fieldset [disabled]="!editable">
+        <label class="font-weight-semibold mb-0 text-info">Taxable Earnings</label>
+        <div class="d-flex align-items-center mb-2">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="taxableEarnings" checked>
+                <label class="custom-control-label" for="taxableEarnings"></label>
+            </div>
+            <p class="mb-0">Enter Total Hours and Split by Percentage</p>
+            <input class="form-control form-control-xs ml-1 text-center w-50x" value="40" />
+        </div>
+
+        <ngx-simplebar class="table-overflow table-overflow-sm table-comm mb-4">
+            <table class="table table-sm table-xs table-field-exclusive bg-white table-striped" data-column-center=".1.5.7.">
+                <thead class="header-nowrap">
+                    <tr>
+                        <td style="width:50px;"></td>
+                        <td style="width:200px;">Payroll Item</td>
+                        <td style="width:150px;">Fund</td>
+                        <td style="width:200px;">Notes</td>
+                        <td>Qty</td>
+                        <td class="text-right">Rate</td>
+                        <td>Hours</td>
+                        <td class="text-right">Amount</td>
+                    </tr>
+                </thead>
+                <tbody class="table-no-padding">
+                    <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="taxableEarningsList" checked>
+                                <label class="custom-control-label" for="taxableEarningsList"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Roads-Wages-Full Time" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Roads" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Council Meetings" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="25.0%" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="$ 12.00" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="10.00" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="$ 120.00" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ngx-simplebar>
+
+        <label class="font-weight-semibold text-info">Non-Taxable Additions</label>
+        <ngx-simplebar class="table-overflow table-overflow-sm table-comm">
+            <table class="table table-sm table-xs table-field-exclusive bg-white table-striped" data-column-center=".1.5.7.">
+                <thead class="header-nowrap">
+                    <tr>
+                        <td style="width:50px;"></td>
+                        <td style="width:200px;">Payroll Item</td>
+                        <td style="width:150px;">Fund</td>
+                        <td style="width:200px;">Notes</td>
+                        <td>Qty</td>
+                        <td class="text-right">Rate</td>
+                        <td>Hours</td>
+                        <td class="text-right">Amount</td>
+                    </tr>
+                </thead>
+                <tbody class="table-no-padding">
+                    <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="ntaxableEarningsList" checked>
+                                <label class="custom-control-label" for="ntaxableEarningsList"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Roads-Wages-Full Time" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Roads" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="Council Meetings" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="25.0%" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="$ 12.00" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs" value="10.00" />
+                        </td>
+                        <td>
+                            <input class="form-control form-control-xs text-right" value="$ 120.00" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ngx-simplebar>
+    </fieldset>
+</section>

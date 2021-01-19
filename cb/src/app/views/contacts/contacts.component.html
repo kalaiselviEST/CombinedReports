@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-lg-3 pr-2 border-right border-light-light">
+    <div class="d-flex">
+      <h1 class="page-title mb-0">Contacts</h1>
+
+      <button class="btn btn-xs btn-info ml-auto px" (click)="addNewContact()"><i class="fas fa-plus mr-1"></i>New
+        Contact</button>
+    </div>
+
+    <contacts-list [mini]="isContactsListMini" (activeContactChange)='activeContactChange($event)'></contacts-list>
+  </div>
+
+  <div class="col-lg-9 pl-2 pr-2">
+    <div class="d-flex">
+      <h1 class="page-title mb-0">
+        <ng-container *ngIf="!isNewContact; else newContact">
+          {{selectedAcc.name}} <small class="text-muted">#{{selectedAcc.number}}</small>
+        </ng-container>
+        <ng-template #newContact>
+          Create New Contact
+        </ng-template>
+      </h1>
+
+      <span class="border-right pr-1 ml-auto" *ngIf="!formEditable">
+        <button class="btn btn-xs btn-outline-secondary px border-0" [routerLink]="[customerUrl]"><i
+            class="fas fa-user mr-1"></i>Customer
+          Details</button>
+      </span>
+      <span class="border-right pr-1" *ngIf="!formEditable">
+        <button class="btn btn-xs btn-outline-secondary ml-1 px border-0" [routerLink]="[vendorUrl]"><i
+            class="fas fa-user-tag mr-1"></i>Vendor
+          Details</button>
+      </span>
+
+      <span class="border-right pr-1" *ngIf="!formEditable">
+        <button class="btn btn-xs btn-outline-secondary ml-1 px border-0" [routerLink]="[employeeUrl]"><i
+            class="fas fa-user-tie mr-1"></i>Employee
+          Details</button>
+      </span>
+
+      <span class="pr-1" *ngIf="!formEditable">
+        <button class="btn btn-xs btn-outline-secondary ml-1 px border-0" [routerLink]="[paymentUrl]"><i
+            class="fas fa-money-check mr-1"></i>Payment
+          Details</button>
+      </span>
+
+      <span class="" *ngIf="!formEditable">
+        <button class="btn btn-xs btn-primary ml-1 px pr-simplebar" (click)="formEditable = true"><i
+            class="fas fa-pencil-alt mr-1"></i>Edit</button>
+      </span>
+
+      <button class="btn btn-xs btn-success ml-auto px mr-2" (click)="saveContact()" *ngIf="formEditable"><i
+          class="fas fa-check mr-1"></i>Save</button>
+      <button class="btn btn-xs btn-light px border pr-simplebar" (click)="cancelSave()" *ngIf="formEditable"><i
+          class="fas fa-times mr-1"></i>Cancel</button>
+    </div>
+
+    <ngx-simplebar class="contact-overflow mt-2" [options]="{autoHide: false}">
+
+      <contact-basic-info [contactObs]="contactObs" [editable]="formEditable"
+        [saveTrigger]="saveTrigger.asObservable()"></contact-basic-info>
+      <contact-addresses [contactObs]="contactObs" [editable]="formEditable"></contact-addresses>
+      <contact-additional [contactObs]="contactObs" [editable]="formEditable"></contact-additional>
+      <customer-history [contactObs]="contactObs" *ngIf="!isNewContact"></customer-history>
+      <vendor-employee-history [contactObs]="contactObs" *ngIf="!isNewContact"></vendor-employee-history>
+
+
+      <router-outlet></router-outlet>
+
+    </ngx-simplebar>
+
+
+  </div>
+</div>

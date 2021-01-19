@@ -1,0 +1,31 @@
+<section class="contact-basic-info dot-loader-overlay mt-2 card shadow-sm bg-ligh">
+    <div class="card-body p-2">
+
+        <div class="d-flex mb-2 align-items-center">
+            <strong>
+                <a class="cursor-pointer" (click)="isCollapsed = !isCollapsed; isRotate = !isRotate">
+                    <i [@smoothRotate]="isRotate?'initial':'final'" class="fas fa-angle-down text-muted mr-1"></i>
+                    Vendor/Employee History</a></strong>
+            <span class="badge badge-default ml-3 border-right bg-light-light">$ &nbsp;4,350.00</span>
+        </div>
+
+        <div [@smoothCollapse]="isCollapsed?'initial':'final'">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.vendor}" (click)="selectTab('vendor')">Vendor <span class="ml-4 text-muted">$
+        &nbsp;45,304.00</span></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" [ngClass]="{'active':activeTab.employee}" (click)="selectTab('employee')">Employee<span class="ml-4 text-muted">$ &nbsp;30,125</span></button>
+                </li>
+            </ul>
+
+            <history-vendor [changeObs]="vendorObs" *ngIf="activeTab.vendor">
+            </history-vendor>
+
+            <history-employee [changeObs]="employeeObs" *ngIf="activeTab.employee">
+            </history-employee>
+        </div>
+
+    </div>
+</section>

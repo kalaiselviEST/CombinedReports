@@ -1,0 +1,83 @@
+<h1 class="page-title">Memorized Transactions</h1>
+
+<section class="filter-strip my-2 border">
+  <div class="search-control">
+    <input type="search" class="form-control form-control-xs" placeholder="Type here to search" />
+  </div>
+  <dropdown-select class="mr-2" buttonClass="btn-dropdown" menuClass="dropdown-menu-right"
+    [dropdownItems]="transactionTypes" (itemChange)="transactionTypeFilter($event)" dropdownLabel="Transaction Type: ">
+  </dropdown-select>
+  <div class="custom-control custom-switch mr-2">
+    <input type="checkbox" class="custom-control-input" id="filterStripInactive" (change)="dummyLoader()">
+    <label class="custom-control-label" for="filterStripInactive">Show Inactive</label>
+  </div>
+  <button class="btn btn-light btn-xs mr-2" ngbTooltip="Clear all filters" placement="top">
+    <i class="fas fa-times text-danger"></i>
+  </button>
+</section>
+<ngx-simplebar class="table-overflow">
+  <table class="table table-sm table-striped" data-column-center=".7.9.">
+    <thead>
+      <tr>
+        <th style="width:1.5rem">&nbsp;</th>
+        <th>Description</th>
+        <th>Transaction Type</th>
+        <th>Account</th>
+        <th>Amount</th>
+        <th>Frequency</th>
+        <th class="text-center">Auto</th>
+        <th>Next Date</th>
+        <th class="text-center">Days in Advance</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="isListLoading">
+      <tr>
+        <td colspan="10" class="text-center py-5 bg-white">
+          <dot-loader loadingText="Fetching Transactions"></dot-loader>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="!isListLoading">
+      <tr class="translate-up" *ngFor="let number of sampleArr; let i = index;" [style.animation-delay.s]="i * 0.025">
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" [id]="'chk_' + number" [checked]="i <= 5">
+            <label class="custom-control-label" [for]="'chk_' + number"></label>
+          </div>
+        </td>
+        <td>Some desc</td>
+        <td>Some type</td>
+        <td>Account Three</td>
+        <td>$ 45,000</td>
+        <td>Monthly</td>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" [id]="'chk_auto_' + number" [checked]="i%3 == 0">
+            <label class="custom-control-label" [for]="'chk_auto_' + number"></label>
+          </div>
+        </td>
+        <td>02/04/2020</td>
+        <td>12</td>
+        <td>06/04/2020</td>
+      </tr>
+    </tbody>
+  </table>
+</ngx-simplebar>
+
+<div class="d-flex mt-3">
+
+  <span class="mr-auto d-inline-flex align-items-center">
+    <span class="white-space-nowrap"> Records per page</span>
+    <select class="form-control form-control-xs ml-1" (change)="dummyLoader()">
+      <!-- <option *ngFor="let item of perPagePagination" [ngValue]="item">{{item}}</option> -->
+      <option>25</option>
+    </select>
+  </span>
+
+  <ngb-pagination class="ml-auto mb-0" (page)="1" [pageSize]="25" [collectionSize]="200" maxSize="3" [rotate]="true"
+    (pageChange)="dummyLoader()">
+    <ng-template ngbPaginationPrevious><i class="fas fa-chevron-left"></i></ng-template>
+    <ng-template ngbPaginationNext><i class="fas fa-chevron-right"></i></ng-template>
+  </ngb-pagination>
+</div>

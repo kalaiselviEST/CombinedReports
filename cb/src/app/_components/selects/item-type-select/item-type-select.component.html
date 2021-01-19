@@ -1,0 +1,38 @@
+<div ngbDropdown (openChange)="openChange($event)">
+
+  <button class="text-left text-truncate" [ngClass]="buttonClass" ngbDropdownToggle
+    [ngbTooltip]="selectedItemType.name == selectedItemType.fullName ? '' : selectedItemType.fullName" placement="top"
+    container="body">
+    <ng-container +ngIf="!isListLoading">
+      <span class="mr-2 text-primary d-none">{{selectedItemType.number}}</span>{{selectedItemType.name}}
+      <span class="text-danger" *ngIf="required && !valid">Required Field</span>
+    </ng-container>
+    <span *ngIf="isListLoading"><i class="fas fa-spinner fa-spin mr-1"></i> Loading...</span>
+  </button>
+  <div ngbDropdownMenu [ngClass]="menuClass" display="dynamic">
+    <form class="px-3" #formSearch>
+      <input class="form-control form-control-sm form-control-xs" placeholder="Type to search" autofocus
+        [(ngModel)]="searchKey" (ngModelChange)="search()" [ngModelOptions]="{standalone: true}" />
+    </form>
+    <ng-container +ngIf="filteredItemTypes.length > 0">
+      <ng-container *ngFor="let item of filteredItemTypes">
+
+        <h6 class="dropdown-header" *ngIf="searchKey.length == 0 && !item.parentID">{{item.name}}</h6>
+        <button ngbDropdownItem *ngIf="item.parentID" (click)="selectItem(item)"
+          [ngClass]="{active: item.id == selectedItemType.id}">
+          <span class="mr-2 text-primary">{{item.number}}</span>
+          <span [innerHTML]="item.name | highlight: searchKey"></span>
+        </button>
+      </ng-container>
+
+    </ng-container>
+    <p class="mb-0 text-muted px-3" *ngIf="filteredItemTypes.length == 0">
+      <em>No results</em>
+    </p>
+    <div class="dropdown-divider"></div>
+    <button ngbDropdownItem (click)="clearSelection()">
+      <i class="fas fa-times text-danger mr-2"></i>
+      <span>Clear selection</span>
+    </button>
+  </div>
+</div>

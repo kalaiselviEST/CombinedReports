@@ -1,0 +1,34 @@
+<section class="dot-loader-overlay" [ngClass]="{'border-0':isLoading}">
+    <ngx-simplebar class="table-overflow table-overflow-sm">
+      <table class="table table-sm table-xs bg-white table-striped" style="table-layout:fixed"
+        data-column-center=".1." data-column-right=".3.4.5.6.7.8.">
+        <thead class="header-nowrap">
+          <tr>           
+            <th style="width:60px;">Year</th>
+            <th>Classification</th>
+            <th>Land</th>
+            <th>Buildings</th>
+            <th>Dwelling</th>
+            <th class="text-warning">Gross</th>
+            <th>Exempt</th>
+            <th class="text-warning">Net</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+            <td>2018</td>
+            <td>Commercial</td>  
+            <td>$ 17,982.00</td>
+            <td>$ 95,968.00</td>
+            <td>$ -</td>
+            <td class="text-warning">$ 17,982.00</td>            
+            <td>$ -</td>
+            <td class="text-warning">$ 17,982.00</td>                        
+          </tr>
+  
+        </tbody>
+      </table>
+    </ngx-simplebar>
+  
+    <dot-loader loadingText="Fetching history" [ngClass]="{'dot-loader-show':isLoading}" [overlay]="true"></dot-loader>
+  </section>

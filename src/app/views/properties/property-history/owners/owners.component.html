@@ -1,0 +1,46 @@
+<section class="dot-loader-overlay" [ngClass]="{'border-0':isLoading}">
+    <ngx-simplebar class="table-overflow table-overflow-sm">
+      <table class="table table-sm table-xs bg-white table-striped" style="table-layout:fixed"
+         data-column-center=".1.6.">
+        <thead class="header-nowrap">
+          <tr>
+            <th style="width:40px">&nbsp;</th>
+            <th>Owner Name</th>
+            <th>Address Line 1</th>
+            <th>Address Line 2</th>
+            <th>City, State ZIP</th>
+            <th style="width:50px">Mail To</th>
+            <th>Ownership</th>
+            <th style="width:70px">Purchased</th>
+            <th style="width:60px">Sold</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let number of sampleComArray; let i = index;" [style.animation-delay.s]="i * 0.025">
+            <td>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" [id]="'chk_' + number" [checked]="i <= 5">
+                    <label class="custom-control-label" [for]="'chk_' + number"></label>
+                </div>
+            </td>
+            <td>Brandy Little</td>
+            <td>414 W Thunder Road</td>
+            <td></td>
+            <td>Demo, IA 51000</td>
+            <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" [id]="'chk_' + number" [checked]="i <= 5">
+                        <label class="custom-control-label" [for]="'chk_' + number"></label>
+                    </div>
+                </td>
+            <td>Contract Holder</td>
+            <td>05-01-07</td>
+            <td></td>
+          </tr>
+  
+        </tbody>
+      </table>
+    </ngx-simplebar>
+  
+    <dot-loader loadingText="Fetching history" [ngClass]="{'dot-loader-show':isLoading}" [overlay]="true"></dot-loader>
+  </section>

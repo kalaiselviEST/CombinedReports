@@ -1,0 +1,80 @@
+<ng-template #content let-modal backdrop="static">
+  <div class="modal-header">
+    <div class="d-flex align-items-center">
+      <span class="mr-auto" *ngIf="formIsProcessing">
+        <i class="fas fa-spinner fa-spin"></i>
+        {{processingTest}}
+      </span>
+      <button type="button" class="btn btn-sm btn-light ml-auto" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+      </button>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="modal-title" id="modal-basic-title">{{ isEdit?'Edit':'New'}} Fund</h5>
+
+      <div class="btn-group mr-2">
+        <button type="button" class="btn btn-xs btn-success"
+          [disabled]="fundForm.invalid || formIsProcessing || fundParentIdRequired || !fund.isFromPortal"
+          (click)="submitForm(true)">
+          <i class="fas fa-check mr-1"></i>Save & Close</button>
+        <div class="btn-group" ngbDropdown placement="bottom-right" role="group"
+          aria-label="Button group with nested dropdown">
+          <button class="btn btn-xs btn-success dropdown-toggle-split" ngbDropdownToggle
+            [disabled]="fundForm.invalid || formIsProcessing || fundParentIdRequired || !fund.isFromPortal"></button>
+          <div class="dropdown-menu dropdown-menu-xs" ngbDropdownMenu>
+            <button ngbDropdownItem (click)="submitForm(false)"
+              [disabled]="fundForm.invalid || formIsProcessing || fundParentIdRequired || !fund.isFromPortal">Save</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="modal-body">
+
+
+    <form [formGroup]="fundForm" novalidate>
+      <fieldset [disabled]="!fund.isFromPortal">
+        <table class="table-sm table-no-padding w-100">
+          <tbody>
+            <tr>
+              <td><label class="mb-0">Sub Of</label></td>
+              <td>
+                <fund-select menuClass="shadow rounded" buttonClass="form-control form-control-sm"
+                  (fundChange)="selectFund($event)" [valid]="!fundParentIdRequired"
+                  [resetObs]="resetAcc.asObservable()"></fund-select>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><label class="mb-0 pr-3 text-nowrap">Fund Number </label></td>
+              <td><input class="form-control form-control-sm" ngbAutofocus [formControl]="fundNumber" maxlength="50"
+                  required [ngClass]="{
+              'border-danger': fundNumber.invalid && (fundNumber.dirty || fundNumber.touched)
+            }" />
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><label class="mb-0">Fund Name</label></td>
+              <td><input class="form-control form-control-sm" [formControl]="fundName" required [ngClass]="{
+              'border-danger': fundName.invalid && (fundName.dirty || fundName.touched)
+            }" /></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td class="align-top"><label class="mb-0">Description</label></td>
+              <td><textarea class="form-control form-control-sm" rows="4" [formControl]="fundDescription" [ngClass]="{
+              'border-danger': fundDescription.invalid && (fundDescription.dirty || fundDescription.touched)
+            }"></textarea></td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </form>
+  </div>
+</ng-template>

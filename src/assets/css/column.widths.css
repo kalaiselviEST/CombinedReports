@@ -1,0 +1,252 @@
+/* Accounts */
+
+coa-accounts .table-mimic .table-head .column-header:nth-child(1), coa-accounts .table-mimic .table-row .table-cell:nth-child(1) {
+  width: 3%;
+}
+
+coa-accounts .table-mimic .table-head .column-header:nth-child(2), coa-accounts .table-mimic .table-row .table-cell:nth-child(2) {
+  width: 5%;
+}
+
+coa-accounts .table-mimic .table-head .column-header:nth-child(3), coa-accounts .table-mimic .table-row .table-cell:nth-child(3) {
+  width: 37%;
+  direction: rtl;
+}
+
+coa-accounts .table-mimic .searching .table-row .table-cell:nth-child(3):hover {
+  overflow: visible;
+  z-index: 1;
+  direction: ltr;
+}
+
+coa-accounts .table-mimic .searching .table-row .table-cell:nth-child(3):hover+.table-cell {
+  opacity: 0;
+}
+
+coa-accounts .table-mimic .table-head .column-header:nth-child(4), coa-accounts .table-mimic .table-row .table-cell:nth-child(4) {
+  width: 30%;
+}
+
+coa-accounts .table-mimic .table-head .column-header:nth-child(5), coa-accounts .table-mimic .table-row .table-cell:nth-child(5) {
+  width: 12%;
+}
+
+coa-accounts .table-mimic .table-head .column-header:nth-child(6), coa-accounts .table-mimic .table-row .table-cell:nth-child(6) {
+  width: 5%;
+  text-align: center;
+}
+
+coa-accounts .table-mimic .table-head .column-header:nth-child(7), coa-accounts .table-mimic .table-row .table-cell:nth-child(7) {
+  width: 5%;
+  text-align: center;
+}
+
+coa-accounts .table-mimic .table-head .column-header:nth-child(8), coa-accounts .table-mimic .table-row .table-cell:nth-child(8) {
+  width: 3%;
+  text-align: center;
+}
+
+/* Funds */
+
+coa-funds .table-mimic .table-head .column-header:nth-child(1), coa-funds .table-row .table-cell:nth-child(1) {
+  width: 3%;
+}
+
+coa-funds .table-mimic .table-head .column-header:nth-child(2), coa-funds .table-row .table-cell:nth-child(2) {
+  width: 5%;
+}
+
+coa-funds .table-mimic .table-head .column-header:nth-child(3), coa-funds .table-row .table-cell:nth-child(3) {
+  width: 35%;
+  direction: rtl;
+}
+
+coa-funds .table-mimic .table-head .column-header:nth-child(4), coa-funds .table-row .table-cell:nth-child(4) {
+  width: 54%;
+}
+
+coa-funds .table-mimic .table-head .column-header:nth-child(5), coa-funds .table-row .table-cell:nth-child(5) {
+  width: 3%;
+}
+
+/* Departments */
+
+coa-departments .table-mimic .table-head .column-header:nth-child(1), coa-departments .table-row .table-cell:nth-child(1) {
+  width: 3%;
+}
+
+coa-departments .table-mimic .table-head .column-header:nth-child(2), coa-departments .table-row .table-cell:nth-child(2) {
+  width: 5%;
+}
+
+coa-departments .table-mimic .table-head .column-header:nth-child(3), coa-departments .table-row .table-cell:nth-child(3) {
+  width: 35%;
+  direction: rtl;
+}
+
+coa-departments .table-mimic .table-head .column-header:nth-child(4), coa-departments .table-row .table-cell:nth-child(4) {
+  width: 54%;
+}
+
+coa-departments .table-mimic .table-head .column-header:nth-child(5), coa-departments .table-row .table-cell:nth-child(5) {
+  width: 3%;
+}
+
+/* COA Common */
+
+coa .table-row-component .table-row-component .table-row .table-cell:nth-child(3) {
+  padding-left: 1rem
+}
+
+coa .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(3) {
+  padding-left: 2rem;
+}
+
+coa .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(3) {
+  padding-left: 3rem;
+}
+
+coa .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(3) {
+  padding-left: 4rem;
+}
+
+coa .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(3) {
+  padding-left: 5rem;
+}
+
+coa .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(3) {
+  padding-left: 6rem;
+}
+
+coa .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(3) {
+  padding-left: 7rem;
+}
+
+coa .table-row-component>.table-row-component>.table-row-component:before {
+  left: calc(8% + 1.25rem);
+}
+
+coa .table-row-component>.table-row-component>.table-row-component>.table-row-component:before {
+  left: calc(8% + 2.25rem);
+}
+
+coa .table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component:before {
+  left: calc(8% + 3.25rem);
+}
+
+coa .table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component:before {
+  left: calc(8% + 4.25rem);
+}
+
+coa .table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component:before {
+  left: calc(8% + 5.25rem);
+}
+
+coa .table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component>.table-row-component:before {
+  left: calc(8% + 6.25rem);
+}
+
+/* Items */
+
+coa-groups .table-row-component>.table-row-component:before {
+  /* Indent Line */
+  left: calc(3% + .3rem);
+}
+
+coa-groups .table-row-component>.table-row-component>.table-row-component:before {
+  /* Indent Line */
+  left: calc(3% + 1.25rem);
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(1), coa-groups .table-mimic .table-row .table-cell:nth-child(1) {
+  /* Column: Active Checkbox */
+  width: 3%;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(2), coa-groups .table-mimic .table-row .table-cell:nth-child(2) {
+  /* Column: Name */
+  width: 20%;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(3), coa-groups .table-mimic .table-row .table-cell:nth-child(3) {
+  /* Column: Description */
+  width: 20%;
+  padding-left: .3rem !important;
+  /* Overriding a style from preious rules */
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(4), coa-groups .table-mimic .table-row .table-cell:nth-child(4) {
+  /* Column: Fund */
+  width: 12%;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(5), coa-groups .table-mimic .table-row .table-cell:nth-child(5) {
+  /* Column: Department */
+  width: 12%;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(6), coa-groups .table-mimic .table-row .table-cell:nth-child(6) {
+  /* Column: Account */
+  width: 12%;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(7), coa-groups .table-mimic .table-row .table-cell:nth-child(7) {
+  /* Column: Liability Account */
+  width: 11%;
+  display: none;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(8), coa-groups .table-mimic .table-row .table-cell:nth-child(8) {
+  /* Column: Limit */
+  width: 5%;
+  display: none;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(9), coa-groups .table-mimic .table-row .table-cell:nth-child(9) {
+  /* Column: Taxable */
+  width: 5%;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(10), coa-groups .table-mimic .table-row .table-cell:nth-child(10) {
+  /* Column: Rates */
+  width: 4%;
+  text-align: center;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(11), coa-groups .table-mimic .table-row .table-cell:nth-child(11) {
+  /* Column: Item Type */
+  width: 10%;
+}
+
+coa-groups .table-mimic .table-head .column-header:nth-child(12), coa-groups .table-mimic .table-row .table-cell:nth-child(12) {
+  /* Column: Action Button */
+  width: 2%;
+}
+
+coa-groups .table-row-component .table-row-component .table-row .table-cell:nth-child(2) {
+  padding-left: 1rem
+}
+
+coa-groups .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(2) {
+  padding-left: 2rem;
+}
+
+coa-groups .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(2) {
+  padding-left: 3rem;
+}
+
+coa-groups .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(2) {
+  padding-left: 4rem;
+}
+
+coa-groups .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(2) {
+  padding-left: 5rem;
+}
+
+coa-groups .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(2) {
+  padding-left: 6rem;
+}
+
+coa-groups .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row-component .table-row .table-cell:nth-child(2) {
+  padding-left: 7rem;
+}
