@@ -1,0 +1,392 @@
+<div class="d-flex justify-content-between align-items-center p-2 bg-white shadow-sm rounded mb-4">
+    <h6 class="text-primary mb-0"></h6>
+    <div class="d-flex justify-content-end align-items-center">
+        <!-- <div class="border border-success text-success mr-2 rounded px-3 shadow-sm">
+            <small>As on Dec 31, 2020</small>
+        </div> -->
+        <div class="dropdown">
+            <button class="btn btn-sm btn-info rounded  dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false"><i class="fas fa-filter pr-1"></i>Apply Filter</button>
+            </button>
+            <div class="dropdown-menu  dropdown-menu-right shadow-sm mt-2 px-3" style="width: 200px;">
+                <form>
+                    <div>
+                        <div class="filter-heading"><span>Accounting Basis</span></div>
+                        <div class="custom-control custom-radio my-2">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1">Accrual</label>
+                        </div>
+                        <div class="custom-control custom-radio my-2">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Cash</label>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="filter-heading"><span>Show</span></div>
+                    <div class="custom-control custom-switch my-2">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Account Codes</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="title-header  my-3">
+    <h5 class="mb-0">Drafts
+    </h5>
+</div>
+<div class="list-container">
+    <ul class="list-group">
+        <li class="list-group-item py-3">
+            <a href="" class="flex-between text-dark">
+                <div class="list-item-details pt-2"><span class="report-name">Foreign Currency Gains and Lossess</span><br>
+                    <ul class="text-muted">
+                        <li>6 August 2021</li>
+                        <li>Published by JOE WEST 19 August 2021</li>
+                    </ul>
+                </div>
+
+            </a>
+        </li>
+        <li class="list-group-item py-3">
+            <a href="#" class="flex-between text-dark" id="blItem">
+                <div class="list-item-details pt-2"><span class="report-name">Balance Sheet</span><br>
+                    <ul class="text-muted">
+                        <li>10 August 2021</li>
+                        <li>Published by JOE WEST 10 August 2021</li>
+                    </ul>
+                </div>
+
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="my-3 report" id="blReport" style="display:none">
+    <div class="row">
+        <div class="col-sm-12 d-flex justify-content-end report-actions">
+            <form class="form-inline">
+
+                <div class="form-group">
+                    <label for="inputPassword6">As of  Date :</label>
+                    <input type="date" id="toDate" class="form-control mx-sm-3">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class=" col-sm-12 ">
+            <div class="card bg-white border-0 shadow-sm ">
+                <div class="card-header bg-white d-flex flex-column ">
+                    <h5 class="my-4 ">Balanced Sheet Report</h5>
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <h6>Company Name : Demo Company</h6>
+                        <p>For the month ended 31 August 2021</h5>
+                    </div>
+                </div>
+                <div class="card-body ">
+                    <table class="table table-sm table-striped mb-0 " data-column-center=".2.3.4. ">
+                        <thead>
+                            <tr>
+                                <th class="bg-light border-0 " width="80% "></th>
+                                <th class="bg-light border-0 "></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white ">
+                                <td>
+                                    <div class="my-2 row-heading font-weight-bold ">Assets</div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Bank</div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Businees Bank Account</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Businees Savings Account</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Total Bank</div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Current Assets</div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Accounts Receivable</td>
+                                <td>775.98</td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Pre Payments</td>
+                                <td>775.98</td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Total Current Assets</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>22,197.20</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Non Current Assets</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>22,973.18</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Total Non-Current Assets</div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Fixed Assets</div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Computer Equipment</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Less Accumulated Depreciation on Computer Equipment</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Office Equipment</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Less Accumulated Depreciation on Office Equipment</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Total Fixed Assets</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td>
+                                    <div class="my-2 row-heading font-weight-bold ">Total Assets</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td>
+                                    <div class="my-2 row-heading font-weight-bold ">Liabilities</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Current Liabilities</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tab-spc2 ">Accounts Payable</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Historical Adjustment</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Sales Tax</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Unpaid Expense Claims</td>
+                                <td>22,973.18</td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Employee Tax Payable</td>
+                                <td>22,973.18</td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Income Tax Payable</td>
+                                <td>22,973.18</td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Revenue Recieved in Advance</td>
+                                <td>22,973.18</td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Suspense</td>
+                                <td>22,973.18</td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Clearing Account</td>
+                                <td>22,973.18</td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Owner's Drawings</td>
+                                <td>22,973.18</td>
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Owner's Funds Introduced</td>
+                                <td>22,973.18</td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Total Current Liabilities</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Non Current Liabilities </div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Other Liabilities</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc ">
+                                    <div class="my-2 row-title font-weight-bold ">Total Non Current Liabilities and Other Liabilities</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td>
+                                    <div class="my-2 row-heading font-weight-bold ">Total Liabilities</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td>
+                                    <div class="my-2 row-title font-weight-bold ">Shareholder's Equity</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tab-spc2 ">Equity-Owner's Share Capital</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr>
+                                <td class="tab-spc2 ">Retained Earnings</td>
+                                <td>22,973.18</td>
+
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc2 ">
+                                    <div class="my-2 row-title font-weight-bold ">Current Year Earnings</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-white ">
+                                <td class="tab-spc2 ">
+                                    <div class="my-2 row-title font-weight-bold ">Total Equity</div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>19,167.52</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    <div class="my-2 row-title font-weight-bold totalVal ">
+                                        <h5>Total Liabilities and Equities</h5>
+                                    </div>
+                                </td>
+                                <td class="font-weight-bold totalVal text-success ">
+                                    <div>
+                                        <h5>15,029.68</h5>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<footer class="table-action-footer">
+    <div class="btn-group float-right" role="group" aria-label="Basic example">
+        <button class="btn btn-sm  text-white ml-3" style="background-color: #3498db;"><i class="fas fa-edit  pr-2" aria-hidden="true"></i>Update</button>
+        <button type="button" class="btn btn-secondary"><i class="fas fa-table pr-2"></i>Excel</button>
+        <button type="button" class="btn btn-secondary"><i class="fas fa-print pr-2"></i>Print</button>
+        <div class="dropup">
+            <button id="test" type="button" class="btn btn-secondary  dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: none !important;"><i class="fas fa-download pr-2"></i> Export</button>
+            <div class="dropdown-menu" aria-labelledby="test">
+                <a class="dropdown-item" href="#"><i class="fas fa-file-pdf text-danger" aria-hidden="true"></i> PDF</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-file-excel text-success" aria-hidden="true"></i> Excel</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-file-spreadsheet"></i>Google Sheets</a>
+            </div>
+        </div>
+        <div class="dropup">
+            <button id="test2" type="button" class="btn btn-secondary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-clone pr-2"></i> Save as</button>
+            <div class="dropdown-menu" aria-labelledby="test2">
+                <a class="dropdown-item" href="#">Draft</a>
+                <a class="dropdown-item" href="#">Published</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    $(document).ready(function() {
+        $('#blItem').click(function() {
+            $('.list-container').hide();
+            $('#blReport').show();
+        });
+    });
+</script>

@@ -1,0 +1,181 @@
+<div class="d-flex justify-content-between align-items-center p-2 bg-white shadow-sm rounded mb-4">
+    <h6 class="text-primary mb-0"></h6>
+    <div class="d-flex justify-content-end align-items-center">
+        <!-- <div class="border border-success text-success mr-2 rounded px-3 shadow-sm">
+            <small>As on Dec 31, 2020</small>
+        </div> -->
+        <div class="dropdown">
+            <button class="btn btn-sm btn-info rounded  dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false"><i class="fas fa-filter pr-1"></i>Apply Filter</button>
+            </button>
+            <div class="dropdown-menu  dropdown-menu-right shadow-sm mt-2 px-3" style="width: 200px;">
+                <form>
+                    <div>
+                        <div class="filter-heading"><span>Accounting Basis</span></div>
+                        <div class="custom-control custom-radio my-2">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1">Accrual</label>
+                        </div>
+                        <div class="custom-control custom-radio my-2">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Cash</label>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="filter-heading"><span>Show</span></div>
+                    <div class="custom-control custom-switch my-2">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Account Codes</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="title-header my-3">
+    <h5 class="mb-0">Published
+    </h5>
+</div>
+<div class="list-container">
+    <ul class="list-group">
+        <li class="list-group-item py-3">
+            <a href="#" class="flex-between text-dark">
+                <div class="list-item-details pt-2"><span class="report-name">Aged Receivables</span><br>
+                    <ul class="text-muted">
+                        <li>6 August 2021</li>
+                        <li>Published by JOE WEST 19 August 2021</li>
+                    </ul>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="row my-3 report" style="display: none;" id="agedRecievables">
+    <div class="col-sm-12">
+        <div class="card bg-white border-0 shadow-sm">
+            <div class="card-header bg-white d-flex flex-column">
+                <h5 class="my-2">Aged Receivables</h5>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6>Company Name : Demo Company</h6>
+                    <p class="font-weight-light">For the month ended 31 August 2021</h5>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-sm table-striped mb-0" data-column-center=".2.3.4.">
+                    <thead>
+                        <tr>
+                            <th class="bg-light border-0" width="40%"></th>
+                            <th class="bg-light border-0">Current</th>
+                            <th class="bg-light border-0">July</th>
+                            <th class="bg-light border-0">June</th>
+                            <th class="bg-light border-0">May</th>
+                            <th class="bg-light border-0">Older</th>
+                            <th class="bg-light border-0 text-right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td>
+                                <div class="my-2 font-weight-bold "> Receivables</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Basket Case</td>
+                            <td>914.55</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td class="">Bayside Club</td>
+                            <td>234.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>234.00</td>
+                        </tr>
+                        <tr>
+                            <td class="">City Limuosines</td>
+                            <td>0.00</td>
+                            <td>703.63</td>
+                            <td>238.20</td>
+                            <td>250.00</td>
+                            <td>0.00</td>
+                            <td>1,191.00</td>
+                        </tr>
+                        <tr>
+                            <td class="">DIISR - Small Business Services</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>270.63</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>270.63</td>
+                        </tr>
+                        <tr>
+                            <td class="">Marines Systems</td>
+                            <td>396.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>6,187.50</td>
+                        </tr>
+                        <tr class="">
+                            <td class="">Ridgeway University</td>
+                            <td>0.00</td>
+                            <td>6,187.50</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>6,187.50</td>
+                        </tr>
+                        <tr class="font-weight-bold">
+                            <td class="">Total Receivables</td>
+                            <td>6,891.13</td>
+                            <td>508.83</td>
+                            <td>250.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>9,194.51</td>
+                        </tr>
+                        <tr>
+                            <td class=""></td>
+                            <td>16.8%</td>
+                            <td>74.9%</td>
+                            <td>5.5%</td>
+                            <td>2.7%</td>
+                            <td>0.0%</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="table-action-footer">
+    <div class="btn-group float-right" role="group" aria-label="Basic example">
+        <button class="btn btn-sm  text-white ml-3" style="background-color: #3498db;"><i class="fas fa-trash-alt  pr-2" aria-hidden="true"></i>Delete</button>
+        <button type="button" class="btn btn-secondary"><i class="fas fa-archive pr-2"></i>Archive</button>
+        <button type="button" class="btn btn-secondary"><i class="fas fa-clone pr-2"></i>Copy & Edit</button>
+        <button type="button" class="btn btn-secondary"><i class="fas fa-print pr-2"></i>Print</button>
+        <button type="button" class="btn btn-secondary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-download pr-2"></i> Export</button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#"><i class="fas fa-file-pdf text-danger" aria-hidden="true"></i> PDF</a>
+            <a class="dropdown-item" href="#"><i class="fas fa-file-excel text-success" aria-hidden="true"></i> Excel</a>
+            <a class="dropdown-item" href="#"><i class="fas fa-file-spreadsheet"></i>Google Sheets</a>
+        </div>
+    </div>
+</footer>
+<script>
+    $(document).ready(function() {
+        $('a').click(function() {
+            $('.list-container').hide();
+            $('#agedRecievables').show();
+        });
+    });
+</script>

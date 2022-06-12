@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home - Combined Reports</title>
+
+    <!-- Animate.CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- jQuery-UI Framework -->
+
+    <!-- <link href="assets\js\jQueryUI\jquery-ui.structure.min.css" rel="stylesheet" />
+    <link href="assets\js\jQueryUI\jquery-ui.min.css" rel="stylesheet" /> -->
+
+
+    <!-- Popper CSN (Bootstrap 4 requires this to work)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Cosmo from bootswatch -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+    <!-- Bootstrap Overrides - JONES -->
+    <link href="assets/css/bootstrap.overrides.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.xxl.css" rel="stylesheet" />
+
+    <!-- Strawberry CSS - JONES -->
+    <link href="assets/css/strawberry.css" rel="stylesheet" />
+    <link href="assets/css/strawberry.min.768.css" rel="stylesheet" />
+    <!-- Responsive CSS -->
+    <link href="assets/css/strawberry.utilities.css" rel="stylesheet" />
+
+    <!-- Utility CSS -->
+    <link href="assets/nice-select/css/nice-select.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Strawberry JS - JONES -->
+    <script src="assets/js/strawberry.core.js"></script>
+    <script src="assets/js/strawberry.js"></script>
+
+    <!-- Chartjs -->
+    <!-- <script src="assets/js/jQueryUI/jquery-ui.min.js"></script> -->
+
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+
+    <script type="text/javascript">
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="assets/js/IE/ie.css.js"><\/script><link href="assets/css/IE/ie.overrides.css" rel="stylesheet"/>');
+    </script>
+
+    <script src="assets/nice-select/js/jquery.js">
+    </script>
+    <script src="assets/nice-select/js/jquery.nice-select.js">
+    </script>
+</head>
+
+<body>
+    <div id="wrapper" class="toggled">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" class="d-none d-lg-block">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/" class='p-0 text-center'>
+                        <img class="sidebar-logo" src="./assets/img/logo.png" style="height: 50px;" />
+                        <h6>Combined Reports</h6>
+                    </a>
+                </li>
+                <li class="d-none">
+                    <a href="#" data-workspace-src="empty" data-title="Coming Soon -Xero Combined Reports" data-page-header="Redirect">
+                        Empty
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#" data-workspace-src="home" data-title="Home - Combined Reports" data-page-header="Home">
+                        <i class="fas fa-home fa-fw mr-1"></i> Home
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" data-workspace-src="reports" data-title="Reports - Combined Reports" data-page-header="Reports">
+                        <i class="far fa-file-alt fa-fw mr-1"></i> Reports
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" data-workspace-src="combined-reports" data-title="Combined Reports - Combined Reports" data-page-header="Combined Reports">
+                        <i class="fa fa-clone fa-fw mr-1"></i> Combined Reports
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" data-workspace-src="xero-connections" data-title="Combined Reports - Xero Connections" data-page-header="Combined Reports">
+                        <i class="fa fa-link fa-fw mr-1"></i> Xero-Connections
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" data-workspace-src="drafts" data-title="Combined Reports - Xero Connections" data-page-header="Combined Reports">
+                        <i class="fa fa-file fa-fw mr-1"></i> Drafts
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" data-workspace-src="published" data-title="Combined Reports - Xero Connections" data-page-header="Combined Reports">
+                        <i class="fa fa-globe fa-fw mr-1"></i> Published
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" data-workspace-src="archived" data-title="Combined Reports - Xero Connections" data-page-header="Combined Reports">
+                        <i class="fa fa-archive fa-fw mr-1"></i> Archived
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" data-workspace-src="users" data-title="Combined Reports - Xero Connections" data-page-header="Combined Reports">
+                        <i class="fas fa-user  fa-fw mr-1"></i>Users
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" data-workspace-src="" data-title="Combined Reports - Xero Connections" data-page-header="Combined Reports">
+                        <i class="fas fa-sign-out-alt  fa-fw mr-1"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--/ Sidebar -->
+        <!-- Page -->
+        <div id="page-content-wrapper">
+            <div class="page-header clearfix">
+                <div class="float-left">
+                    <i class="fas fa-bars menu-toggle"></i>
+                </div>
+                <div class="float-right">
+                    <span class="align-items-center d-md-flex d-none justify-content-center">
+                        <div class="dropdown d-inline-block header-path text-primary font-weight-bold">
+                           
+            </div>
+            <a href="#" class="d-inline-block position-relative mr-2" data-toggle="tooltip" title="Notifications">
+                <i class="fas fa-bell right-menu-toggle"></i>
+                <span class="notification-dot">2</span>
+                    </a>
+                    <div class="dropdown d-inline-block mr-3">
+                        <div class="cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="./assets/img/users/Joe_West.jpg" class="rounded-pill mr-1" style="height: 26px;"> Joe West
+                            <small><i class="fas fa-chevron-down ml-1"></i></small>
+                        </div>
+                        <div class="dropdown-menu dropdown-menu-right shadow-sm" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#"><i class="fas fa-user-circle mr-2"></i>Profile</a>
+                            <a class="dropdown-item" data-toggle="modal" data-target="#rateYourExperience" href="#">
+                                <i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                        </div>
+                    </div>
+                    </span>
+                </div>
+                <div class="float-right">
+
+                </div>
+            </div>
+            <div class="workspace px-4" id="workspace">
+
+                <!-- Main content is loaded here -->
+
+            </div>
+        </div>
+
+
+        <!--/ Page -->
+
+    </div>
+</body>
+
+</html>
